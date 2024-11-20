@@ -1,0 +1,199 @@
+@charset "utf-8";
+/*0.웹폰트 연결(section13-258page)*/
+
+
+/*
+    1.공통 스타일
+    css적용 이전 부터 태그가 가지고 있는 기본
+    스타일을 초기화
+
+    - 바깥쪽 여백(margin:0)
+    - 안쪽 여백(padding:0)
+    - 리스트 스타일(불릿기호 비표시: list-style:none;)
+    - 선택자의 면적 안쪽으로 외곽선 두께 포함(box-sizing: border-box)
+    - 하이퍼링크 적용(a)태그의 밑줄 비표시(text-decoration:none)
+
+    2.버튼
+
+    - 기본 외곽선 제거(border:0;)
+    - 배경색(background: none;)
+    - 마우스 오버시 커서모양을 a태그 동일(cursor: pointer;)
+*/
+
+*{ 
+    margin:0; padding:0; list-style:none; box-sizing: border-box;
+    text-decoration: none;
+}
+button{ border:0; background: none; cursor: pointer;}
+
+
+/*2.개별 스타일*/
+
+
+/*
+    2-1. #header
+    
+    전역메뉴에 마우스 오버시(조작) 하위메뉴가 보여지는 슬라이드(동작) 효과의 원리(js)
+
+    ========================== header(mask = overflow:hidden;)
+     --   -- -- -- -- --   --  nav(masked)
+    ===== -- -- -- -- -- =====   
+          -- -- -- -- --
+
+    overflow: hidden;
+    overflow: scroll;
+
+*/
+#header{
+    position: fixed; left:0; top:0; width:100%; height:100px;
+    display: flex; justify-content: space-between;
+    overflow: hidden; z-index: 1;
+    background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+#header:hover{ height:250px;} /*js*/
+
+
+
+h1{ margin:32px 0 0 30px; }
+.gnb{ width:700px; display: flex; }
+
+/*flex부모공간의 자식태그의 (140px),(20%)  1:1:1:1:1*/
+.gnb>li{ flex:1;}
+.gnb>li>a{ 
+    display: block;
+    width: 100%; height:100px;
+
+    text-align: center; line-height: 100px; color:#000; /*section13*/
+}
+.gnb>li>a:hover{
+    color: rgb(8, 140, 76);
+    border-bottom:5px solid rgb(8, 140, 76);
+}
+.gnb>li ul a{
+    display: block; height:40px;
+    text-align: center; line-height: 40px; color:#656565; /*section13*/
+}
+.gnb>li ul a:hover{ opacity: 0.4;}
+.util_menu{ display: flex; margin:32px 30px 0 0;}
+.util_menu li{ margin-left:15px;}
+
+
+/*2-2. #main*/
+
+
+
+
+/*2-3. #footer*/
+
+#footer{ width:100%; height:300px; background: #000; }
+
+#footer>button{
+    position: fixed; right:30px; bottom:50px;
+    width: 45px; height:45px;
+    border-radius: 23px; background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+#footer>button:hover{ 
+    background: rgb(8, 140, 76);; color:#fff;
+}
+
+
+
+.footer_top{ 
+    width:100%; height:50px; 
+    border-bottom: 1px solid rgba(255,255,255,0.2);}
+.footer_inner{
+    width:1400px; height:50px; margin:0 auto;
+    display: flex; justify-content: space-between;
+}
+.footer_inner ul{ display: flex;}
+.footer_inner li{ margin-right:20px; line-height: 50px;/*section13*/ }
+.footer_inner a{ color:#fff; }
+.footer_inner a:hover{ opacity: 0.4;}
+
+.footer_bottom{
+    width: 1400px; height:200px; margin:30px auto 0 auto;
+    display: flex; justify-content: space-between;
+}
+.footer_bottom *{ 
+    color: #fff;  margin-bottom:10px; font-style: normal;/*section13*/}
+
+.footer_bottom a{ display: block;}
+.footer_bottom address, .footer_bottom p:nth-of-type(1){ float:left; }
+.footer_bottom p:last-child{ clear: both;}
+
+.footer_bottom>a{ margin-top:50px; }
+
+/* 메인 시작*/
+
+#main{margin-top: 100px;}
+
+#main section:not(:nth-child(3)) h2{display: none;}
+
+.company li>div , .newest>div , .news , .stock  , .job>div {
+    width: 1200px; margin:0 auto;
+}
+
+/* 메인 개별스타일*/
+.company {
+    width: 100%; height: 650px; overflow: hidden;
+}
+.company ul{
+    width: 200%; height: 650px;
+    display: flex;
+}
+.company ul li {flex: 1; }
+
+.company ul li:first-child{
+    background-image: url(../img/20231207060014190.png);
+    background-repeat:no-repeat; background-position: center top;
+    background-size: cover; background-color: #009178;
+}
+.company ul li:last-child{
+    background:url(../img/20230518085527647.jpg) no-repeat center top / cover ;
+}
+.company li img{ width: 650px; margin: 150px 0 0 200px;
+}
+
+.company>div{
+    width: 150px; height: 40px; border-radius:20px; background:rgba(0,0,0,0.6);
+    display: flex; justify-content: space-around; 
+    position: absolute; left: 50%; margin: -150px 0 0 -500px; line-height: 40px;
+}
+
+.company>div span{
+    line-height: 40px; color:white;
+}
+
+/* 메인 중앙 시작 */
+
+.newest{
+    width: 100%; height: 670px; background: #f5fbfa;
+}
+
+.newest>div{
+    position: relative; margin-top: -50px; 
+}
+.newest>div ul{display: flex; flex-wrap:wrap; justify-content: space-between;}
+
+.newest>div ul li{
+    width: 32%; height: 280px; margin-bottom: 20px; border-radius: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.newest>div ul li:nth-child(1){background: url(../img/bg-hanagroup.png) no-repeat right 30px bottom 30px white;; 
+}
+
+.newest>div ul li:nth-child(2){background: url(../img/bg-global.png) no-repeat right 30px bottom 30px white; 
+}
+
+.newest>div ul li:nth-child(3){background: url(../img/bg-shareprice-m.png) no-repeat right bottom/250px auto #effbf7; 
+}
+
+.newest>div ul li:nth-child(4){background: url(../img/20230731075409661.jpg) no-repeat right bottom/180px auto white; 
+}
+
+.newest>div ul li:nth-child(5){background: url(../img/20230524092725713.jpg) no-repeat right bottom/180px auto white; 
+}
+
+.newest>div ul li:nth-child(6){background: url(../img/bg-result.png) no-repeat right 30px bottom 30px/60px auto white; 
+}
