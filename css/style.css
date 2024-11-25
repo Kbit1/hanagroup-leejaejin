@@ -1,6 +1,20 @@
 @charset "utf-8";
-/*0.웹폰트 연결(section13-258page)*/
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*.웹폰트 연결(section13-258page)
+    font-family: Nanum Gothic;
+    font-weight:bold,normal
 
+    font-family: Roboto;
+    font-weight:100,300,400,500,700,900
+
+    font-family: 'GmarketSansMedium';
+*/
 
 /*
     1.공통 스타일
@@ -22,7 +36,7 @@
 
 *{ 
     margin:0; padding:0; list-style:none; box-sizing: border-box;
-    text-decoration: none;
+    text-decoration: none; font-family: 'GmarketSansMedium'; 
 }
 button{ border:0; background: none; cursor: pointer;}
 
@@ -197,3 +211,111 @@ h1{ margin:32px 0 0 30px; }
 
 .newest>div ul li:nth-child(6){background: url(../img/bg-result.png) no-repeat right 30px bottom 30px/60px auto white; 
 }
+
+.newest h3 { height: 50px; border-bottom: 1px solid #d9d9d9;}
+.newest h3 a {display: block; border-radius: 20px 20px 0 0;
+    width:100%; padding:10px 20px; color:black;
+    display: flex; justify-content: space-between;}
+
+.newest li>p{
+    padding-left: 20px; padding: 20px 0 20px 20px;
+}
+
+.newest li:not(:nth-child(3)) p:nth-of-type(1){
+     font-size: 30px;
+}
+.newest li:nth-child(3) p:nth-of-type(2) b{font-size: 30px; margin-right: 10px;}
+
+.newest li>a{
+    display: block; padding: 10px 20px; color:#656565;
+}
+.newest li>a img{
+    margin-left: 20px;
+}
+
+.news{height: 550px;}
+.news>div{
+    display: flex; justify-content: space-between; margin: 100px 0 30px 0;
+    line-height: 30px;
+}
+
+.news>div a{background: url(../img/more-btn1.GIF) no-repeat right center;
+padding-right: 20px; color:black;}
+
+.news ol{
+    display: flex; justify-content: space-between;
+}
+
+.news ol li{
+    flex:1; margin: 0 5px;
+}
+
+.news ol li a{
+    display: block; padding-top: 190px;
+}
+
+.news ol li:nth-child(1) a{
+    background: url(../img/20240223035036704.jpg)no-repeat center top/100% auto;
+}
+.news ol li:nth-child(2) a{
+    background: url(../img/20240223021824141.jpg)no-repeat center top/100% auto;
+}
+.news ol li:nth-child(3) a{
+    background: url(../img/20240222014932317.jpg)no-repeat center top/100% auto;
+}
+.news ol li:nth-child(4) a{
+    background: url(../img/20240222060617951.jpg)no-repeat center top/100% auto;
+}
+
+.news p:nth-child(1){width:65px; height: 25px; border:1px solid #009178; font-size: 14px;
+text-align: center; line-height: 25px; color:#009178; border-radius: 5px;}
+
+.news p:nth-child(2){
+    margin:30px 0 50px 0; font-size: 15px; color:#656565;
+}
+
+.news p:nth-child(3){
+    font-size: 14px; color:#656565;}
+
+.stock{
+    height: 350px; display: flex; justify-content: space-between; }
+
+.stock>div{flex:1; }
+
+.stock>div>div{
+    display: flex; justify-content: space-between;
+    height: 40px; margin-bottom: 30px; line-height: 40px;
+}
+.stock>div>div a{
+    padding-right: 25px; color:black;
+    background: url(../img/more-btn1.GIF)no-repeat right center;
+}
+
+.stock>div:nth-of-type(1){margin-right:30px;}
+
+.stock table{width: 100%; }
+
+ .stock table td{height: 40px;}
+ .stock table td:last-child{text-align: right;}
+
+ .stock table td a {color:black;}
+ .stock table td a:hover{color:#d9d9d9;}
+
+.stock ol{display: flex; justify-content: space-between;}
+.stock li{flex:1; border-left: 1px solid; height: 120px; padding-left: 20px;}
+
+.stock li p{margin-bottom: 45px;}
+.stock li a{color:black;}
+.stock li a img{margin-left:10px;}
+.stock li a:hover{opacity: 0.5;}
+
+.job{width: 100%; height: 250px; background:url(../img/bg-recruit.png) no-repeat center top/cover;}
+.job>div{display: flex; justify-content: space-between;}
+.job p{padding-top:90px; font-size: 30px; color:white; line-height: 40px;}
+.job>div>div{padding-top: 70px;}
+.job a{display: block; width: 200px; height: 50px; margin-bottom: 20px;
+    border-radius: 25px; line-height: 50px; text-align: center;}
+
+.job a:first-child{background: white; color:black;}
+.job a:last-child{background:#3d3d3d; color:white;}
+.job a:hover{border:2px solid white; background: none; color:white;}
