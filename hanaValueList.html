@@ -4,38 +4,10 @@
         <meta charset="utf-8">
         <title>하나금융그룹</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/sub_style.css">
     </head>
     <body>
-
-        <!--
-            웹사이트 제작시 이미지를 적용하는 방식
-
-            1. html 언어를 사용한 img(alt) 태그로 이미지를 출력하는 방식(이미지는 반드시 정보)
-            2. CSS 언어를 사용한 background 속성으로 이미지를 출력하는 방식(정보의 이해도를 높혀줄 수 있는 장식 요소)
-        -->
-        
-        <!--
-            인터넷 주소창에 "w3마크업" 검색
-
-            ★ The W3C Markup Validation Service
-            ★ https://validator.w3.org/#validate_by_input
-        -->
-
-        <!--
-            명시도: 선택자 우선 순위 계산법
-
-            아이디(id)  >   클래스(clas)  > 태그(tag)  > *
-            100             10             1            0
-
-
-            *{ color: red; }            0
-            header a { color: blue;}    2
-            .gnb a{ color: gold; }      11
-            #header a{ color: green; }  101
-        -->
-
-        <!--1. id="header" 명시도 100점 -->
-        <!--CSS.  display:flex; justify-content: space-between; -->
+        <!--1-->
         <header id="header">
             <!--1.1.사이트 제1제목-->
             <h1><a href="index.html"><img src="img/logo.JPG" alt="하나금융그룹"></a></h1>
@@ -101,257 +73,61 @@
 
         </header>
 
+        <!--2-->
+        <main id="sub_main">
 
-        
-        <!--2. id="main" 명시도 100점  -->
-        <main id="main">
-            <!--
-                section은 주제별 대그룹을 의미하는 태그로써
-                반드시 어떠한 주제로 내용이 구성되어 그룹화 되어있는지
-                알려주기위해 제목 h2~h6제공을 w3c는 권장합니다. 
-            -->
-            
-            <!--1.하나금융 경영방침 주제그룹(10점) ★2중 확장구조 -->
-            <section class="company">
-                <!--css  h2{ display:none; }-->
-                <h2>하나금융 비전</h2>
-
-                <!--비전소개(슬라이드방식 1.첫번째 슬라이드 2.두번째 슬라이드)-->
-                <ul>
-                    <!--첫번째 슬라이드: 내편이 하나 생겼다.-->
-                    <li>
-                        <div>
-                            <img src="img/20231207060056825.png" alt="내편이 하나 생겼다.">
-                        </div>
-                    </li>
-
-                    <!--두번째 슬라이드: Big Step for Tomorrow, 지속가능한 미래를 위한 그룹의 큰 발걸음 -->
-                    <li>
-                        <div>
-                            <img src="img/20230518085741227.png" alt="Big Step for Tomorrow, 지속가능한 미래를 위한 그룹의 큰 발걸음">
-                        </div>
-                    </li>
-                </ul>
-
-                <!--특정 시간에 따라 변화되는 콘텐츠는 사용자 조작이 가능하게 설정.(웹접근성 준수)-->
-                <div>
-                    <button><img src="img/pause-btn.png" alt="슬라이드 일시정지"></button>                
-                    <button><img src="img/prev-btn.png" alt="이전 슬라이드 보기"></button>
-                    <!--좌우 조작 버튼 클릭시 전체 이미지 장수로 부터 현재 보여지는 이미지 장수의
-                        숫자를 js언어를 통해 증가/감소-->
-                    <p><span>1</span>/<span>2</span></p>
-
-                    <button><img src="img/next-btn.png" alt="다음 슬라이드 보기"></button>
+            <!--전체 서브 공통 콘텐츠-->
+            <div class="sub_title">
+                <!--2.1 서브 타이틀(h2)구역 -->
+                <div class="sub_visual">
+                    <h2>그룹소개</h2>
+                    <p>하나금융 그룹을 소개합니다.</p>
                 </div>
+                
+                <!--2.2 서브 LNB(Local Navigation bar)-->
+                <div class="lnb">
 
-            </section>
-
-            <!--2.하나금융 주요소식 주제그룹(10점) ★2중 확장구조 -->
-            <section class="newest">
-                <div>
-                    <!--css  h2{ display:none; }-->
-                    <h2>하나금융 주요소식</h2>
+                    <a href="index.html">홈</a>
 
                     <ul>
-                        <!--주요소식 첫번째!! 하나금융그룹 소개-->
                         <li>
-                            <h3><a href="#"><span>하나금융그룹</span> <img src="img/more-btn1.GIF" alt="자세히 보러가기"></a></h3>
-
-                            <p><b>함께 성장하며<br>
-                            행복을 나누는 금융</b></p>
-
-                            <p>직원, 손님, 사회 모두가 행복한<br>
-                            금융회사로 성장해갑니다</p>
-                        
-                        </li>
-
-                        <!--주요소식 두번째!! 글로벌 네트워크 소개-->
-                        <li>                        
-                            <h3><a href="#"><span>글로벌 네트워크</span> <img src="img/more-btn1.GIF" alt="자세히 보러가기"></a></h3>
-
-                            <p><b>전 세계 25개 지역<br>
-                                211개의 네트워크</b></p>
-
-                            <p>국내 최대의 글로벌 네트워크를 통해<br>
-                                세계적인 금융그룹으로 도약합니다</p>                    
-                        </li>
-
-                        <!--주요소식 세번째!! 주가정보 소개-->
-                        <li>                        
-                            <h3><a href="#"><span>주가정보</span> <img src="img/more-btn1.GIF" alt="자세히 보러가기"></a></h3>
-
-                            <p>하나금융지주(086790)</p>
-
-                            <p><b>58,900</b>KRW</p>
-
-                            <p>전일대비 <img src="img/down-icon.gif" alt="하락"> 1,900원 (3.33%)</p>                    
-                        </li>
-
-                        <!--주요소식 네번째!! ESG REPORT 소개-->
-                        <li>                        
-                            <h3><a href="#"><span>ESG REPORT</span><img src="img/more-btn1.GIF" alt="자세히 보러가기"></a></h3>
-
-                            <p><b>2023년<br>
-                                지속가능경영보고서</b></p>
-
-                                <!--a태그에 이동 주소로 압축파일 적용시 다운로드 형식-->
-                            <a href="download/report_2022_kor.zip">PDF(국문)<img src="img/download-btn.gif" alt="다운로드"></a>
-                            <a href="download/report_2022_kor.zip">PDF(영문)<img src="img/download-btn.gif" alt="다운로드"></a>                  
-                        </li>
-
-                        <!--주요소식 다섯번째!! ANNUAL REPORT 소개-->
-                        <li>                        
-                            <h3><a href="#"><span>ANNUAL REPORT</span><img src="img/more-btn1.GIF" alt="자세히 보러가기"></a></h3>
-
-                            <p><b>2023년<br>
-                                연차보고서</b></p>
-
-                            <!--a태그에 이동 주소로 압축파일 적용시 다운로드 형식-->
-                            <a href="download/report_2022_kor.zip">ANNUAL REPORT(Full)<img src="img/download-btn.gif" alt="다운로드"></a>
-                            <a href="download/report_2022_kor.zip">ANNUAL REPORT(Only)<img src="img/download-btn.gif" alt="다운로드"></a>                  
-                        </li>
-
-                        <!--주요소식 여섯번째!! 경영실적 소개-->
-                        <li>                        
-                            <h3><a href="#"><span>ANNUAL REPORT</span><img src="img/more-btn1.GIF" alt="자세히 보러가기"></a></h3>
-
-                            <p><b>2023년<br>
-                                경영실적 발표</b></p>
-                                
-                            <!--a태그에 이동 주소로 압축파일 적용시 다운로드 형식-->
-                            <a href="download/report_2022_kor.zip">PDF<img src="img/download-btn.gif" alt="다운로드"></a>
-                            <a href="download/report_2022_kor.zip">Web Casting<img src="img/download-btn.gif" alt="다운로드"></a>                  
+                            <a href="hanaValueList.html">그룹소개</a>
+                            <ul>
+                                <li><a href="hanaValueList.html">핵심가치</a></li>
+                                <li><a href="vision.html">그룹비전</a></li>
+                            </ul>
                         </li>
                     </ul>
+
                 </div>
-            </section>
+            </div>
 
-            <!--3.하나소식(10점)-->
-            <section class="news">
+            <!--개별 서브 콘텐츠 구역-->
+            <div class="hanaValueList">
+                <h3>핵심가치</h3>
 
-                <div>
-                    <h2>하나소식</h2>
-                    <a href="#">more</a>
-                </div> 
+                <p><strong>POWER on Integrity</strong></p>
 
-                <!--업데이트 날짜 준수되어 최근 업로드 순서로 목록화-->
-                <ol>
-                    <li>
-                        <a href="#">
-                            <p><strong>하나뉴스</strong></p>
-                            <p><b>하나금융그룹, 새 광고모델로 대한민국 모두<br>
-                            의 HERO 가수 임영웅 맞는다!</b></p>
-                            <p>2024.02.23</p>
-                        </a>
-                    </li>
+                <p>
+                    하나금융그룹은 하나인만의 생각하는 방식, 창조적이고 강력한 기업문화를 가지고 있습니다. 하나인들이 공유하고 실천하는 핵심 
+                    가치는 기업 활동에 있어서 가치판단과 행동의 기준이 되는 가장 소중한 무형자산입니다.
+                </p>
 
-                    <li>
-                        <a href="#">
-                            <p><strong>하나뉴스</strong></p>
-                            <p><b>하나금융그룹, 새로운 인재상으로<br>
-                            하나로 연결된 모두의 행복 새로운</b></p>
-                            <p>2024.02.22</p>
-                        </a>
-                    </li>
+                <img src="sub_img/hanaValue.png" alt="Passion 열정 태양같은 열정 책임감 있게 최선을 다하고 변화와 혁신으로 더 나은 가치를 추구하는 것
+                Openness 열린마음 하늘같은 열린 마음 유연하고 편견없이 사람이나 상황을 이해하고 공감하는 것
+                With Customer 손님우선 왕처럼 모시는 손님 손님을 최우선으로 삼는 마음으로 그들의 필요를 탐구하고 채워주는 것
+                Excllence 전문성 별처럼 빛나는 전문성 최고의 신뢰를 얻기 위해 각자의 분야에서 차별화된 역량을 계발하는 것
+                Rwespect 존중과 배려 마음에서 우러나는 존중과 배려 개인 역략 발휘와 상호협력을 위한 기본 자세로 상대방 입장에서 생각하고 대하는 것
+                Integrity 정직 성실 투명 산처럼 변하지 않는 INTEGRITY 금융인의 기본적인 윤리로 항상 맡은 바를 정직하고 성실하게 이행하는 것
+                
+                하나금융그룹 핵삼가치는 손님을 우선으로 하는 기업과 개인의 가치판단 및 행동의 기준입니다.">
 
-                    <li>
-                        <a href="#">
-                            <p><strong>하나뉴스</strong></p>
-                            <p><b>하나증권, '하나증권 손님톡'으로<br>
-                            투자정보 얻고, 건강 관리도 하세요!</b></p>
-                            <p>2024.02.22</p>
-                        </a>
-                    </li>
+                <a href="vision.html">비전과 미션 <img src="sub_img/more-btn1.GIF" alt="바로가기"></a>
+            </div>
 
-                    <li>
-                        <a href="#">
-                            <p><strong>하나뉴스</strong></p>
-                            <p><b>하나은행, 글로벌파이낸스誌 선정<br>
-                                『2024 대한민국 최우수 외국은행</b></p>
-                            <p>2024.02.21</p>
-                        </a>
-                    </li>
-
-                </ol>
-
-            </section>
-
-            <!--4.공시정보(10점)-->
-            <!-- css: width:1400px; margin:0 auto; display:flex; -->
-            <section class="stock">
-                <!--css  h2{ display:none; }-->
-                <h2>공시정보</h2>
-
-                <!--기업공시-->
-                <div> 
-                    <div>
-                        <h3>기업공시</h3>
-                        <a href="#">more</a>
-                    </div>
-
-                    <table>
-                        <tr> <td><a href="#">투자설명서</a></td> <td>2024.02.23</td>  </tr>
-                        <tr> <td><a href="#">증권발행실적보고서</a></td> <td>2024.02.23</td>  </tr>
-                        <tr> <td><a href="#">기업설명회(IR)개최(안내공시)</a></td> <td>2024.02.21</td>  </tr>
-                    </table>
-                </div>
-
-                <!--경영공시-->
-                <div>
-                    <div>
-                        <h3>경영공시</h3>
-                        <a href="#">more</a>
-                    </div>
-
-                    <!--분기별 경영 현황 목록-->
-                    <ol>
-                        <li>
-                            <p><b>2023년 3분기<br>
-                            하나금융지주회사 현황</b></p>
-                            <a href="download/report_2022_kor.zip">PDF<img src="img/download-btn.gif" alt="다운로드"></a>
-                        </li>
-
-                        <li>
-                            <p><b>2023년 2분기<br>
-                            하나금융지주회사 현황</b></p>
-                            <a href="download/report_2022_kor.zip">PDF<img src="img/download-btn.gif" alt="다운로드"></a>
-                        </li>
-
-                        <li>
-                            <p><b>2023년 1분기<br>
-                            하나금융지주회사 현황</b></p>
-                            <a href="download/report_2022_kor.zip">PDF<img src="img/download-btn.gif" alt="다운로드"></a>
-                        </li>
-                    </ol>
-                </div>
-
-            </section>
-
-
-            <!--5.채용정보(10점) ★2중 확장구조-->
-            <!--css: width:100%; height:350px; background -->
-            <section class="job">
-                <!--css: width:1400px; height:350px; margin:0 auto; display:flex; -->
-                <div>
-                    <!--css  h2{ display:none; }-->
-                    <h2>채용정보</h2>
-
-                    <p>변화를 주도하는<br>
-                       글로벌 인재를 기다립니다</p>
-
-                    <div>
-                        <a href="#">인재상 알아보기</a> 
-                        <a href="#">채용공고 알아보기</a> 
-                    </div>
-
-                </div>             
-            </section>
         </main>
 
-
-
-        <!--3. id="footer" 명시도 100점 -->
-        <!--css: width:100%; height:300px; background: #000; -->
+        <!--3-->
         <footer id="footer">
 
             <!--3.0 상단 이동 버튼-->
