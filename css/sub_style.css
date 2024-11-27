@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+/*
+    index,        sub1~ sub10
+(#header)       (#header)
+    (#main)       (#sub_main)
+(#footer)        (#footer)
+--------------------------
+
+    ★style.css
+    (1)  index,sub1~ sub10의 공통 스타일을 담당 
+         :웹폰트, *(기본 마진,패딩,리스트....초기화), 버튼 태그의 초기화
+
+    (2)  index,sub1~ sub10 전체 페이지의 공통 (#header),(#footer)의 스타일을 담당
+
+    ★sub_style.css
+    (1) sub1~ sub10의 (#sub_main)에 적용되는 전체 서브 공통,개별 스타일을 담당
+*/
+
+/* 전체서브 공동스타일 */
+
+#sub_main{margin-top:100px;}
+
+.sub_title{width:100%; height: 300px; text-align: center; color:white;}
+
+    .sub1_bg{background:url(../sub_img/hanaValueTitle.jpg)no-repeat center top/cover;}
+    .sub2_bg{background:url(../sub_img/compositionTitle.jpg)no-repeat center top/cover;}
+    .sub3_bg{background:url(../sub_img/foundationTitle.jpg)no-repeat center top/cover;}
+    .sub4_bg{background:url(../sub_img/businessListTitle.jpg)no-repeat center top/cover;}
+    .sub5_bg{background:url(../sub_img/newsListTitle.jpg)no-repeat center top/cover;}
+.sub_visual{height: 300px;}
+
+.sub_title h2{padding:100px 0 10px 0; font-size: 30px;}
+
+.lnb{width: 1200px; height: 50px; margin: 0 auto; border-bottom: 1px solid #d9d9d9;
+    display: flex; line-height: 50px;}
+
+.lnb>ul>li{display: flex;}
+
+.lnb>a{width: 50px; border-left: 1px solid #d9d9d9;
+border-right: 1px solid #d9d9d9 ; color:#7a7a7a}
+
+.lnb>ul>li>*{width: 250px;height: 50px; border-right: 1px solid #d9d9d9; color:#7a7a7a;}
+
+.lnb>ul>li ul a{display: block; color:black;}
+
+.lnb>ul>li ul a:hover{background:#009178; color: white;}
+
+.lnb>ul>li ul li:nth-child(1)~li{display: none;}
+.lnb>ul>li ul:hover li:nth-child(1)~li{display: block;}
+
+#sub_main>div:last-child{width: 1200px; margin: 0 auto;}
+#sub_main h3{height: 300px; text-align: center; line-height: 300px; font-size: 40px;}
+
+#sub_main>div:last-child>*:not(:first-child){margin-bottom:80px;}
+
+/* 개별구역 하나 리스트*/
+
+.hana strong{font-size: 30px;}
+.hana>img{width:100%; margin: 50px 0;} /* 인라인 속성중에서도 블럭 성질 변환없이 면적설정  img 버튼 인풋 */
+.hana a{display: flex; width: 250px; height: 50px; border: 1px solid #d9d9d9; margin: 50px auto 200px auto; justify-content: space-between;
+line-height: 50px; color:black;}
+.hana a img{width: 10px; height: 18px; margin-top:16px;}
+table{ border-collapse: collapse;}
+
+/* 개별구역 비전*/
+
+.vision h4{width:250px; font-size:30px; position: sticky; top:150px;}
+.vision>div>div{
+    margin: -40px 0 0 200px;
+}
+
+.vision>div:nth-of-type(3)>div>div{margin-bottom: 50px ;}
+
+.vision>div>:nth-last-of-type(3)>div>div P:nth-child(4),
+.vision>div>:nth-of-type(3)>div>div p:has(strong),
+.vision>div:nth-last-of-type(3)>div>div img{
+    margin: 50px 0; font-size: 20px;}
+
+.vision>div:last-child img{width: 100%; margin-top: 50px;}
+
+/* composition */
+ /*★★★★★★★★★★★★★★★★★★ 중간에 있는 두줄 선 없애기 *//*
+td,th(칸, 열, cols, cell)
+기본 칸과 칸 사이의 여백 발생: cellspacing: 2px;
+※CSS에서는 칸과 칸사이의 틈을 붕괴된 틈(collapse)이라고 생각
+
+반드시 붕괴된 틈사이를 매꿔주는 속성(border-collapse)을
+td,th가 아닌 부모태그 table에 적용해 주셔야 합니다!!!!
+border-collapse: collapse;
+
+※전체 공통스타일로 적용 권장
+*/
+.composition table{width: 100%; border-top:2px solid;}
+.composition tr>*{height: 50px; border-bottom: 1px solid #d9d9d9;}
+.composition tbody td:first-child{background:#dbf1ee;}
+.composition tbody td:not(:last-child){border-right: 1px solid #d9d9d9; width: 600px; padding-left: 20px;
+}
+.composition tbody td:not(:first-child){
+    text-align: right; padding-right: 20px;}
+.composition div *{color:#7a7a7a;}
+
+/* 미팅리스트 */
+.meeting>div{   display: flex;
+    height: 50px; line-height: 50px; justify-content: space-between;
+}
+
+.meeting table{width: 100%; border-top:2px solid;}
+.meeting tr>*{height: 50px; border-bottom: 1px #d9d9d9;}
+.meeting td:not(:nth-child(2)){text-align: center;}
+.meeting td:first-child{background: #eaeaea;}
+.meeting td:nth-child(2){padding: 20px;}
+
+.meeting a{display: flex; width: 250px; height: 50px; border: 1px solid #d9d9d9; margin: 50px auto 200px auto; justify-content: space-between;
+    line-height: 50px; color:black; float:right;}
+.meeting a img{width: 20px; height: 18px; margin-top: 16px;}
