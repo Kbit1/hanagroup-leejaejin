@@ -1,20 +1,48 @@
+<!--교재section1-->
 <!DOCTYPE html>
 <html lang="ko">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
         <title>하나금융그룹</title>
+        <!--교재section5-->
+
+        <!--index및 전체 서브 header,footer담당-->
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/sub_style.css">
+
+        <!--전체 서브 header,footer를 제외한 subContainer영역 스타일 담당-->
+        <link rel="stylesheet" href="css/subStyle.css">
+        
+        <!--1.제이쿼리 연동(http://jquery.com)
+            2.위 사이트 접속후 오른쪽 상단 "Download jQuery"버튼클릭
+            3.페이지를 스크롤 하다보면 "Using jQuery with a CDN"타이틀 위치를 확인할 수 있습니다. 
+              해당 타이틀 게시글 내에 "sourcemap files"단어를 찾아서 클릭
+            4.이동한 페이지에서 스크롤을 최상단으로 이동시킨 이후 
+              "<script src="http://code.jquery.com/jquery-1.9.0rc1.js"></script>"해당 코드를 
+              복사 및 아래와 같이 붙혀넣기를 해주세요. 
+        -->
+        <script src="http://code.jquery.com/jquery-1.9.0rc1.js"></script>
+        <!--2.자바스크립트(js)작성 문서 생성및 연동-->
+        <script src="js/motion.js"></script>
+        
     </head>
     <body>
-        <!--1-->
+
         <header id="header">
-            <!--1.1.사이트 제1제목-->
+
+            <!--1.제1제목-->
             <h1><a href="index.html"><img src="img/logo.JPG" alt="하나금융그룹"></a></h1>
 
-            <!--1.2.전역메뉴(탐색요소 집합)-->
+            <!--2.전역 메뉴(항목,리스트)-->
+            <!--nav: 주요 탐색링크의 그룹,집합 영역(전역메뉴)에 한정적으로 산업현장에서는 사용되고 있습니다.()-->
             <nav>
-                <!--명시도 10-->
+                
+                <!--태블릿,모바일 환경에서만 적용, 데스크탑 비표시 처리-->
+                <div class="tmNav">                    
+                    <a href="index.html"><img src="img/logo.JPG" alt="하나금융그룹"></a>
+                    <button>X</button>
+                </div>
+
                 <ul class="gnb">
                     <!--대메뉴1-->
                     <li>
@@ -63,116 +91,139 @@
                 </ul>
             </nav>
 
-            <!--1.3.사용자에게 유용한 기능을 제공하는 유틸 메뉴-->
-            <ul class="util_menu">
+            <!--3.유용한 기능 메뉴-->
+            <!--
+
+                img태그: 반드시 이미지는 정보이며, 설명글을 포함해야 합니다.
+                ※픽토그램: 언어를 대체하는 시각기호 (텍스트 미제공, 이미지 제공)
+
+                css장식: 정보의 이해도를 높혀줄 수 있는 연상 장식이미지 
+
+                
+            -->
+            <ul class="util">
                 <li><a href="#"><img src="img/util-menu1.gif" alt="주식정보 보러가기"></a></li>
-                <li><a href="#"><img src="img/util-menu2.gif" alt="하나네트워크 보러가기"></a></li>
-                <li><a href="#"><img src="img/util-menu3.gif" alt="언어변경"></a></li>
-                <li><a href="#"><img src="img/util-menu4.gif" alt="사이트맵"></a></li>
+                <li><a href="#"><img src="img/util-menu2.gif" alt="하나네트워크 소식 보러가기"></a></li>
+                <li><a href="#"><img src="img/util-menu3.gif" alt="웹사이트 이용시 언어 변경 보러가기"></a></li>
+                <li><a href="#"><img src="img/util-menu4.gif" alt="사이트맵 보러가기"></a></li>
             </ul>
 
         </header>
 
-        <!--2-->
-        <main id="sub_main">
+        <!--서브 영역 전체 콘텐츠 컨테이너 그룹-->
+        <div id="subContainer">
 
-            <!--전체 서브 공통 콘텐츠-->
-            <div class="sub_title ">
-                <!--2.1 서브 타이틀(h2)구역 -->
-                <div class="sub_visual sub4_bg">
-                    <h2>투자정보</h2>
-                    <p>하나금융 투자정보를 소개합니다.</p>
-                </div>
-                
-                <!--2.2 서브 LNB(Local Navigation bar)-->
-                <div class="lnb">
+            <!--전체 서브 공통1(두괄식 제목,요약글 제공)-->
+            <div class="subTitle sub4Bg">
+                <h2>투자정보</h2>
+                <p>하나금융 투자정보를 소개합니다.</p>
+            </div>
+
+
+            <!--전체 서브 공통2(subLnb제공)-->
+
+            <!--1.(width:100%; height:50px; border-bottom)-->
+            <div class="subLnb">
+                <!--width:1200px; height:50px; margin:0 auto; display:flex; -->
+                <div>
+                    
                     <a href="index.html">홈</a>
-
+                
+                    <a href="businessList.html">투자정보</a>
+    
                     <ul>
-                        <li>
-                            <a href="businessList.html">투자정보</a>
-                            <ul>
-                                <li><a href="businessList.html">기업공시</a></li>
-                                <li><a href="managementList.html">경영공시</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="businessList.html">기업공시</a></li>
+                        <li><a href="managementList.html">경영공시</a></li>
                     </ul>
 
                 </div>
+
             </div>
 
-            <!--개별 서브 콘텐츠 구역-->
-            <div class="business">
+
+
+            <!--개별 서브 정보 구역-->
+            <div class="subContent businessList">
                 <h3>기업공시</h3>
 
-                <table>
-                    <thead>
-                        <tr> <th>번호</th> <th>제목</th> <th>공시일</th> <th>공시사이트</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr> <td>1</td> <td>2</td> <td>3</td> <td>4</td></tr>
-                        <tr> <td>1</td> <td>2</td> <td>3</td> <td>4</td></tr>
-                        <tr> <td>1</td> <td>2</td> <td>3</td> <td>4</td></tr>
-                        <tr> <td>1</td> <td>2</td> <td>3</td> <td>4</td></tr>
-                        <tr> <td>1</td> <td>2</td> <td>3</td> <td>4</td></tr>
-                        <tr> <td>1</td> <td>2</td> <td>3</td> <td>4</td></tr>
-                        <tr> <td>1</td> <td>2</td> <td>3</td> <td>4</td></tr>
-                        <tr> <td>1</td> <td>2</td> <td>3</td> <td>4</td></tr>
-                        <tr> <td>1</td> <td>2</td> <td>3</td> <td>4</td></tr>
-                        <tr> <td>1</td> <td>2</td> <td>3</td> <td>4</td></tr>
-                    </tbody>
-                </table>
-                
-                <ul>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                </ul>
-
-                <a href="#">다음</a>
-
+                <!--서브페이지별 정보구성-->
                 <div>
-                    <div>
-                        <p><strong>공시규정</strong></p>
-                        <p>당사의 공시업무 수행을 위해<br>
-                            필요한 사항을 규정하고 있습니다.</p>
-                        <a href="#">자세히보기</a>
+
+                    <table>
+
+                        <thead>
+                            <tr>  <th>번호</th>  <th>제목</th>  <th>공시일</th>  <th>공시사이트</th>  </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>  <td>2606</td>  <td>[기재정정]일괄신고서</td>  <td>2024.03.14</td>  <td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20240314001662" target="_blank">DART</a></td>  </tr>
+                            <tr>  <td>2605</td>  <td>사업보고서 (2023.12)</td>  <td>2024.03.14</td>  <td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20240314001662" target="_blank">DART</a></td>  </tr>
+                            <tr>  <td>2604</td>  <td>주식등의대량보유상황보고서(약식)</td>  <td>2024.03.11</td>  <td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20240314001662" target="_blank">DART</a></td>  </tr>
+                            <tr>  <td>2603</td>  <td>기업설명회(IR)개최(안내공시)</td>  <td>2024.03.05</td>  <td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20240314001662" target="_blank">DART</a></td>  </tr>
+                            <tr>  <td>2602</td>  <td>기업지배구조보고서공시</td>  <td>2024.02.29</td>  <td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20240314001662" target="_blank">DART</a></td>  </tr>
+                            <tr>  <td>2601</td>  <td>의결권대리행사권유참고서류</td>  <td>2024.02.29</td>  <td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20240314001662" target="_blank">DART</a></td>  </tr>
+                            <tr>  <td>2600</td>  <td>주주총회소집공고</td>  <td>2024.02.29</td>  <td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20240314001662" target="_blank">DART</a></td>  </tr>
+                            <tr>  <td>2699</td>  <td>감사보고서제출 (자회사의 주요경영사항)</td>  <td>2024.02.29</td>  <td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20240314001662" target="_blank">DART</a></td>  </tr>
+                            <tr>  <td>2698</td>  <td>감사보고서제출 (자회사의 주요경영사항)</td>  <td>2024.02.29</td>  <td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20240314001662" target="_blank">DART</a></td>  </tr>
+                            <tr>  <td>2697</td>  <td>주주총회집중일개최사유신고</td>  <td>2024.02.29</td>  <td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20240314001662" target="_blank">DART</a></td>  </tr>
+                        </tbody>
+
+                    </table>
+
+                    <ul>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">다음</a></li>
+                    </ul>
+
+                    <div class="businessList-bottom">
+                        <ul>
+                            <!--1-->
+                            <li>
+                                <p><strong>공시규정</strong></p>
+                                <p>당사의 공시업무 수행을 위해<br>
+                                    필요한 사항을 규정하고 있습니다.</p>
+                                <a href="#">자세히보기</a>
+                            </li>
+
+                            <!--2-->
+                            <li>
+                                <p><strong>공시업무지침</strong></p>
+                                <p>공시규정에서 위임한 사항에<br>
+                                    필요한 사항을 규정하고 있습니다.</p>
+                                <a href="#">자세히보기</a>
+                            </li>
+
+                            <!--3-->
+                            <li>
+                                <p><strong>미공개중요정보 관리지침</strong></p>
+                                <p>당사의 미공개중요정보의 관리와 내부자거래<br>
+                                    방지를 위한 사항 등을 정하고 있습니다.</p>
+                                <a href="#">자세히보기</a>
+                            </li>
+                        </ul>
+
                     </div>
 
-                    <div>
-                        <p><strong>공시업무지침</strong></p>
-                        <p>공시규정에서 위임한 사항에<br>
-                            필요한 사항을 규정하고 있습니다.</p>
-                        <a href="#">자세히보기</a>
-                    </div>
 
-                    <div>
-                        <p><strong>미공개중요정보 관리지침</strong></p>
-                        <p>당사의 미공개중요정보의 관리와 내부자거래<br>
-                            방지를 위한 사항 등을 정하고 있습니다.</p>
-                        <a href="#">자세히보기</a>
-                    </div>
                 </div>
-
             </div>
 
-        </main>
+        </div>
 
-        <!--3-->
+
+        <!--3.footer: 하단로고, 저자정보, 저작권정보, 연락처 등을 포함하는 구역(필수 콘텐츠)-->
+        <!--#footer 명시도100-->
         <footer id="footer">
 
-            <!--3.0 상단 이동 버튼-->
-            <button>▲</button>
+            <p class="topBtn"><button>TOP</button></p>
 
-            <!--3.1 푸터영역 상단 콘텐츠-->
-            <!--css: width:100%; height:50px; border-bottom:1px solid #d9d9d9; -->
-            <div class="footer_top">
-
-                <!--css: width:1400px; height:50px; margin:0 auto; display:flex; justify-content: space-between;-->
-                <div class="footer_inner">
-                    <!--고객지원 메뉴(리스트,항목,목록,)-->
+            <div class="footerTop">
+                <div class="footerInner1">
+                    <!--고객지원 메뉴(항목,리스트),(개인정보를 해당 웹사이트에 제공시)-->
                     <ul>
                         <li><a href="#">개인정보처리방침</a></li>
                         <li><a href="#">신용정보활용체제</a></li>
@@ -180,42 +231,30 @@
                         <li><a href="#">하나맵</a></li>
                     </ul>
 
-                    <!--SNS 채널 목록(항목,리스트,메뉴)-->
+                    <!--SNS: 소셜 네트워크 서비스 제공 메뉴(항목,리스트)-->
                     <ul>
-                        <li><a href="#"><img src="img/sns-icon1.gif" alt="유투브채널 바로가기"></a></li>
-                        <li><a href="#"><img src="img/sns-icon2.gif" alt="인스타그램 바로가기"></a></li>
-                        <li><a href="#"><img src="img/sns-icon3.gif" alt="틱톡 바로가기"></a></li>
-                        <li><a href="#"><img src="img/sns-icon4.gif" alt="페이스북 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon1.gif" alt="하나금융그룹 유트브 채널 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon2.gif" alt="하나금융그룹 인스타그램 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon3.gif" alt="하나금융그룹 틱톡 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon4.gif" alt="하나금융그룹 페이스북 바로가기"></a></li>
                     </ul>
                 </div>
-
             </div>
 
-            <!--3.2 푸터영역 하단 콘텐츠-->
-            <!--css: width:1400px; height:200px; margin:0 auto; display:flex; justify-content: space-between;-->
-            <div class="footer_bottom">
+            <div class="footerBottom">
+                <div class="footerInner2">
+                    <!--하단 로고는 별도의 제목을 적용하지 않는 업계 동향을 인지!!-->
+                    <p><a href="#"><img src="img/footer-logo.gif" alt="하나금융그룹"></a></p>
 
-                <div>
-                    <!--하단 로고-->
-                    <a href="index.html"><img src="img/footer-logo.gif" alt="하나금융그룹"></a>
+                    <address>서울특별시 중구 을지로 66</address> 
 
-                    <!--주소(address)--> 
-                    <address>서울특별시 중구 을지로 6</address>
+                    <p>02.2002.1110</p>
 
-                    <!--전화번호-->
-                    <p>02.20002.11110</p>
-
-                    <!--저작권 표기(문장)-->
                     <p>Copyright ⓒ 2022 HANA FINANCIAL GROUP. All rights Reserved.</p>
                 </div>
 
-                <!--웹접근성 인증 취득마크(이미지)-->
-                <a href="https://www.wa.or.kr/" target="_blank">
-                    <img src="img/wa.GIF" alt="웹접근성 인증 마크취득, 웹접성 인증 평가 센터 바로가기">
-                </a>
-
+                <a href="#"><img src="img/wa.GIF" alt="WA웹접근성 인증마크 취득"></a>
             </div>
-
 
         </footer>
 
