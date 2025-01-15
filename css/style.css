@@ -1,951 +1,644 @@
-
-/*전해상도 공통 스타일(모바일,태블릿,데스크탑)*/
 @charset "utf-8";
-/*
-    0.웹폰트 연결(section13-258page) -CDN(Content Delivery Network)
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
-    사용하고 싶은 서체가 있다면, 서체를 무료로 서비스하는 사이트를 찾아가
-    해당 업로드된 서체의 URL을 실시간 서비스 (실시간 스트리밍)
-
-    1. fonts.google.com(웹 폰트 무료 사이트-영문서체 위주)
-    2. fonts.google.com 연동 웹폰트 사용 방법.
-        font-family: Nanum Gothic;
-        font-weight : bold, normal
-
-        font-family: Roboto;
-        font-weight: 100,300, 400, 500, 700, 900 
-    
-    ----------------------------------------------------------------------------------
-
-    3.눈누(웹폰트 무료 사이트-한글서체 위주)
-    
-      font-family: 'GmarketSansMedium';
-
-
-*/
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-/*
-    1.공통 스타일
-    css적용 이전 부터 태그가 가지고 있는 기본
-    스타일을 초기화
-
-    - 바깥쪽 여백(margin:0)
-    - 안쪽 여백(padding:0)
-    - 리스트 스타일(불릿기호 비표시: list-style:none;)
-    - 선택자의 면적 안쪽으로 외곽선 두께 포함(box-sizing: border-box)
-    - 하이퍼링크 적용(a)태그의 밑줄 비표시(text-decoration:none)
-
-    2.버튼
-
-    - 기본 외곽선 제거(border:0;)
-    - 배경색(background: none;)
-    - 마우스 오버시 커서모양을 a태그 동일(cursor: pointer;)
-*/
-
+/* 공통구역 헤더와 공통구역! 관리하기 편하게 */
 *{ 
-    margin:0; padding:0; list-style:none; box-sizing: border-box;
-    text-decoration: none; font-family: 'GmarketSansMedium';
-
-}
-button{ border:0; background: none; cursor: pointer;}
-
-
-/*1.데스크탑 미디어쿼리: CSS코드를 해독하는 미디어 환경의 (스크린 폭이 최소 1280px 이상일 경우) {}괄호 안의 CSS를 처리.*/
-@media screen and (min-width:1280px) {   
-                  
-    #header{
-        position: fixed; left:0; top:0; z-index:1;
-        width:100%; height:100px;
-        display: flex; justify-content: space-between;
-        overflow: hidden;
-        background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-    #header:hover{ height:250px;} /*js*/
-
-
-
-    h1{ margin:32px 0 0 30px; }
-    .gnb{ width:700px; display: flex; }
-
-    /*flex부모공간의 자식태그의 (140px),(20%)  1:1:1:1:1*/
-    .gnb>li{ flex:1;}
-    .gnb>li>a{ 
-        display: block;
-        width: 100%; height:100px;
-
-        text-align: center; line-height: 100px; color:#000; /*section13*/
-    }
-    .gnb>li>a:hover{
-        color: rgb(8, 140, 76);
-        border-bottom:5px solid rgb(8, 140, 76);
-    }
-    .gnb>li ul a{
-        display: block; height:40px;
-        text-align: center; line-height: 40px; color:#656565; /*section13*/
-    }
-    .gnb>li ul a:hover{ opacity: 0.4;}
-    .util_menu{ display: flex; margin:32px 30px 0 0;}
-    .util_menu li{ margin-left:15px;}
-
-
-    /*2-2. #main*/
-    /*main 공통 스타일*/
-    #main{ margin-top:100px; }
-    #main section:not(:nth-child(3)) h2{ display: none;}
-    .company li>div, .newest>div, .news, .stock, .job>div{
-        width:1200px; margin:0 auto;
-    }
-
-    .company{  width:100%; height:650px; overflow:hidden;
-    }
-    .company ul{width:200%; height: 650px; display: flex; }
-
-    .company ul li{ flex:1;}
-    .company ul li:first-child{
-        background-image: url(../img/20231207060014190.png);
-            background-repeat: no-repeat; /* no-repeat, repeat-x , repeat-y*/
-            background-position: center top; /* x(left center right, px)  y(top center bottom, px)*/
-            background-size: cover;/*w(px,auto,%) h(px,auto,%), cover*/
-            background-color: #009178;
-            background-attachment: fixed; /*fixed( 브라우저의 스크롤바로부터 배경 이미지를 고정: 패럴렉스 스크롤링 기법)*/
-
-    }
-    .company ul li:last-child{
-        background: url(../img/20230518085527647.jpg) no-repeat  center top/cover fixed;
-        /*          (1) url                          (2)repeat  (3)position/(4)size (5)attachment (6)background-color*/
-    } 
-    .company li img{ width:600px; margin:150px 0 0 200px; /*t r b l*/ }
-    
-    .company>div{
-        width:150px; height:40px; border-radius: 20px;
-        background: rgba(0,0,0,0.6);
-        display: flex; justify-content: space-around;
-        position: absolute; left:50%; margin: -150px 0 0 -500px;
-    }
-    .company>div span{
-
-        line-height: 40px; color:#fff;
-    }
-
-
-    .newest{
-        width:100%; height:670px; background: #f5fbfa;
-    }
-    .newest>div{
-        position: relative; margin-top:-50px;
-    }
-
-    .newest>div ul{
-        display: flex; flex-wrap:wrap;
-        justify-content: space-between;
-        /*부모태그의 자식들은 서로 독립된 문단 없이
-        연속 배치 공간을 설정*/
-        
-    }
-    .newest>div ul li{
-        width:32%; height:280px;
-        margin-bottom: 20px;
-        border-radius: 20px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.4);
-        /*부모태그의 flex  100%공간 내에
-        각각 32%를 할당 100%이상 넘어가는 대상들은
-        줄바꿈 연출
-        (반드시 부모의 동의를 얻어야 합니다. flex-wrap:wrap;)
-        */
-    }
-
-    .newest>div ul li:nth-child(1){
-        background: url(../img/bg-hanagroup.png) no-repeat right 30px bottom 30px #fff;
-        /*
-            다중 백그라운드 이미지 설정 방법
-
-            background: url() repeat position/size,   <--- 제일 상단에 배치
-                        url() repeat position/size,
-                        url() repeat position/size background-color   <----제일 하단에 배치
-
-            ex)
-
-            background: url(../img/bg-result.png) no-repeat right 30px bottom 30px/50px auto,
-                url(../img/bg-hanagroup.png) no-repeat right 30px bottom 30px/50px auto aquamarine;
-        */
-    }
-    .newest>div ul li:nth-child(2){
-        background: url(../img/bg-global.png) no-repeat right 30px bottom 30px #fff;
-    }
-    .newest>div ul li:nth-child(3){
-        background: url(../img/bg-shareprice-m.png) no-repeat right bottom/250px auto #effbf7;
-    }
-    .newest>div ul li:nth-child(4){
-        background: url(../img/20230731075409661.jpg) no-repeat right  bottom 20px/150px auto #fff;
-    }
-    .newest>div ul li:nth-child(5){
-        background: url(../img/20230524092725713.jpg) no-repeat right  bottom 20px/150px auto #fff;
-    }
-    .newest>div ul li:nth-child(6){
-        background: url(../img/bg-result.png) no-repeat right 30px bottom 30px #fff;
-    }
-
-    .newest h3{ height:50px; border-bottom: 1px solid #d9d9d9;}
-    .newest h3 a{
-        display: block; width:100%; border-radius: 20px 20px 0 0;
-        padding:12px 20px; color:#000;
-        display: flex; justify-content: space-between;
-    }
-    .newest li>p{ padding:20px 0 20px 20px; }
-
-    .newest li:not(:nth-child(3)) p:nth-of-type(1){ font-size: 20px;}
-    .newest li:nth-child(3) p:nth-of-type(2){ font-size:14px; }
-    .newest li:nth-child(3) p:nth-of-type(2) b{ font-size:30px; margin-right: 10px;}
-
-    .newest li>a{ display: block; padding:10px 20px; color:#656565;}
-    .newest li>a img{ margin-left:20px;}
-
-    .news{ height:550px;}
-    .news>div{
-        display: flex; justify-content: space-between;
-        margin:100px 0 30px 0; line-height: 30px;
-    }
-    .news>div a{ 
-        padding-right:20px; color:#000;
-        background: url(../img/more-btn1.GIF) no-repeat right center; }
-
-
-    .news ol{display: flex; justify-content: space-between;}
-    .news ol li{ flex:1; margin:0 5px;}
-    .news ol li a{display: block; padding-top:190px; }
-
-    .news ol li:nth-child(1) a{
-        background: url(../img/20240223035036704.jpg) no-repeat center top/100% auto;
-    }
-    .news ol li:nth-child(2) a{
-        background: url(../img/20240223021824141.jpg) no-repeat center top/100% auto;
-    }
-    .news ol li:nth-child(3) a{
-        background: url(../img/20240222014932317.jpg) no-repeat center top/100% auto;
-    }
-    .news ol li:nth-child(4) a{
-        background: url(../img/20240222060617951.jpg) no-repeat center top/100% auto;
-    }
-
-    .news p:nth-child(1){
-        width:65px; height:25px; border:1px solid #009178;
-        font-size:14px; text-align: center; line-height: 25px;
-        color:#009178; border-radius: 5px;
-    }
-    .news p:nth-child(2){
-        margin:30px 0 50px 0; 
-        font-size:15px; color:#3d3d3d;
-    }
-    .news p:nth-child(3){
-        font-size:14px; color:#656565;
-    }
-
-    .stock{ height:350px; display: flex; justify-content: space-between;}
-
-    .stock>div{ flex:1;}
-    .stock>div:nth-of-type(1){ margin-right:30px; }
-
-    .stock>div>div{
-        display: flex; justify-content: space-between;
-        height:40px; margin-bottom:30px;
-        line-height: 40px;
-    }
-    .stock>div>div a{
-        padding-right:25px; color: #000;
-        background: url(../img/more-btn1.GIF) no-repeat right center;
-    }
-    .stock table{ width:100%;}
-    .stock table td{ height:40px; }
-    .stock table td:last-child{ text-align: right;}
-
-    .stock table td a{ color:#000;}
-    .stock table td a:hover{ color: #d9d9d9;}
-
-    .stock ol{ display: flex; justify-content: space-between;}
-
-    .stock li{ 
-        flex:1; border-left: 1px solid; 
-        height: 120px; padding-left:20px;
-    }
-    .stock li p{ margin-bottom: 45px;}
-    .stock li a{ color:#000; }
-    .stock li a img{ margin-left:10px;}
-    .stock li a:hover{ opacity: 0.5;}
-
-    .job{
-        width:100%; height:250px;
-        background: url(../img/bg-recruit.png) no-repeat center top/cover;
-    }
-    .job>div{
-        display: flex; justify-content: space-between;
-    }
-    .job p{ 
-        padding-top:90px; font-size:30px; color:#fff; 
-        line-height: 40px;
-    }
-
-    .job>div>div{ padding-top: 70px;}
-
-    .job a{
-        display: block; width:200px; height:50px;
-        margin-bottom: 20px; border-radius: 25px;
-        line-height: 50px; text-align: center;
-    }
-    .job a:first-child{ background: #fff; color:#000;}
-    .job a:last-child{ background: #3d3d3d; color:#fff;}
-    .job a:hover{
-        border:2px solid #fff; color:#fff;
-        background: none;
-    }
-
-    /*2-3. #footer*/
-
-    #footer{ clear:both; margin-top:200px; width:100%; height:300px; background: #000; }
-    #footer>button{
-        position: fixed; right:30px; bottom:50px;
-        width: 45px; height:45px;
-        border-radius: 23px; background: #fff;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-    #footer>button:hover{ 
-        background: rgb(8, 140, 76);; color:#fff;
-    }
-
-
-
-    .footer_top{ 
-        width:100%; height:50px; 
-        border-bottom: 1px solid rgba(255,255,255,0.2);}
-    .footer_inner{
-        width:1400px; height:50px; margin:0 auto;
-        display: flex; justify-content: space-between;
-    }
-    .footer_inner ul{ display: flex;}
-    .footer_inner li{ margin-right:20px; line-height: 50px;/*section13*/ }
-    .footer_inner a{ color:#fff; }
-    .footer_inner a:hover{ opacity: 0.4;}
-
-    .footer_bottom{
-        width: 1400px; height:200px; margin:30px auto 0 auto;
-        display: flex; justify-content: space-between;
-    }
-    .footer_bottom *{ 
-        color: #fff;  margin-bottom:10px; font-style: normal;/*section13*/}
-
-    .footer_bottom a{ display: block;}
-    .footer_bottom address, .footer_bottom p:nth-of-type(1){ float:left; }
-    .footer_bottom p:last-child{ clear: both;}
-
-    .footer_bottom>a{ margin-top:50px; }
-
+    margin:0; padding:0; list-style: none; text-decoration: none; color:black;
+    font-family: Noto Sans KR, sans-serif; font-weight:400; box-sizing: border-box;
 }
 
+button{ border:0; cursor: pointer; background:none;}
 
-/*2.태블릿 미디어쿼리: CSS코드를 해독하는 미디어 환경의 
-(스크린 폭이 최소 441px 이상일 경우) (스크린 폭이 최대 1279px 이하일 경우) {}괄호 안의 CSS를 처리.*/
-@media screen and (min-width:441px) and (max-width:1279px) {
+.gnb>li>a:hover{ color:#009178; }
+.company{ overflow: hidden;}
 
-    #header{
-        position: fixed; left:0; top:0; z-index:1;
-        width:100%; height:80px;
-        display: flex; justify-content: space-between;
-        background: #fff; 
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
-        transition: all 0.3s ease;
-    }    
-    h1{ margin:25px 0 0 30px; }
-
-
-    /*모바일~태블릿의 전역메뉴는 데스크탑과 완전 다릅니다!!!새롭게 제작*/
-    nav{
-
-        margin-left: 100%; /*js에서 메뉴 출력 버튼 클릭시 100% ▶ 0% 애니메이션 효과 추가*/
-
-        position:fixed; left:0; top:0;  
-        width:100%; height:100%;
-        background: #fff;
-    }
-    .gnb{margin-top:80px; border-top:2px solid #009178;}
-    .gnb::before{
-        content:"닫기";
-        position: absolute; 
-        top:30px; right:30px;
-        color:#009178;
-    }
-    /*ios,안드로드 디자인 가이드 버튼의 크기, 터치 영역 최소40px*/
-    .gnb a{
-        display: block; height:45px;   
-        text-align: right; line-height: 45px;
-        padding-right:30px; color:#000;
-        border-bottom:1px solid #d9d9d9;                 
-    }
-    .gnb>li>ul{ display: none;}
-    .gnb>li>ul a{
-        background: #009178; color:#fff;
-    }
-    .util_menu li:not(:last-child){ display: none; }
-    .util_menu li:last-child{ margin:25px 25px 0 0;}
-
-
-
-    /*2-2. #main*/
-    /*main 공통 스타일*/
-    #main{ margin-top:80px; }
-
-    #main section:not(:nth-child(3)) h2{ display: none;}
-    .company{ width:100%; height:550px; overflow:hidden; }
-    .company ul{width:200%; height:550px; display: flex; }
-    .company ul li{ flex:1; text-align: center; transition: all 0.3s ease;}
-
-
-            .company ul li:first-child{
-                background: url(../img/20231207060014190.png) no-repeat center top/cover #009178;
-            }
-            .company ul li:last-child{
-                background: url(../img/20230518085527647.jpg) no-repeat center top/cover;
-            } 
-            .company li img{ width:430px; margin-top:150px; }
-
-    .company>div{
-        position: absolute; left:50%; margin: -100px 0 0 -75px;
-        width:150px; height:40px; border-radius: 20px;
-        background: rgba(0,0,0,0.6);
-        display: flex; justify-content: space-around;
-        position: absolute; 
-    }
-    .company>div span{
-        line-height: 40px; color:#fff;
-    }
-
-
-    .newest{ width:90%; margin:50px 5%; background: #f5fbfa;}
-
-            .newest>div ul{ 
-                display: flex; justify-content: space-between; 
-                flex-wrap: wrap;
+.topBtn button{
+    position: fixed; right:20px; bottom: 150px;
+    width:40px; height:40px; background: #000; 
+    color:#fff; font-size:10px; border-radius: 20px; 
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+/* PC 미디어 스크린!! 반응형  */
+@media screen and (min-width:1200px){
+            /*#header*/
+            #header{ 
+                position:fixed; background:white; left:0; top:0; z-index:1; display: flex; 
+                width:100%; height:90px; justify-content: space-between; overflow: hidden;
             }
 
-            .newest>div ul li{
-                width:49%; height:280px;
-                margin-bottom: 20px;
-                border-radius: 20px;
-                box-shadow: 0 0 10px rgba(0,0,0,0.4);
-                transition: all 0.3s ease;
+            h1{
+                margin:22px 0 0 20px;
             }
 
-    .newest>div ul li:nth-child(1){
-        background: url(../img/bg-hanagroup.png) no-repeat right 30px bottom 30px #fff;
-        /*
-            다중 백그라운드 이미지 설정 방법
-
-            background: url() repeat position/size,   <--- 제일 상단에 배치
-                        url() repeat position/size,
-                        url() repeat position/size background-color   <----제일 하단에 배치
-
-            ex)
-
-            background: url(../img/bg-result.png) no-repeat right 30px bottom 30px/50px auto,
-                url(../img/bg-hanagroup.png) no-repeat right 30px bottom 30px/50px auto aquamarine;
-        */
-    }
-    .newest>div ul li:nth-child(2){
-        background: url(../img/bg-global.png) no-repeat right 30px bottom 30px #fff;
-    }
-    .newest>div ul li:nth-child(3){
-        background: url(../img/bg-shareprice-m.png) no-repeat right bottom/250px auto #effbf7;
-    }
-    .newest>div ul li:nth-child(4){
-        background: url(../img/20230731075409661.jpg) no-repeat right  bottom 20px/150px auto #fff;
-    }
-    .newest>div ul li:nth-child(5){
-        background: url(../img/20230524092725713.jpg) no-repeat right  bottom 20px/150px auto #fff;
-    }
-    .newest>div ul li:nth-child(6){
-        background: url(../img/bg-result.png) no-repeat right 30px bottom 30px #fff;
-    }
-
-    .newest h3{ height:50px; border-bottom: 1px solid #d9d9d9;}
-    .newest h3 a{
-        display: block; width:100%; border-radius: 20px 20px 0 0;
-        padding:12px 20px; color:#000;
-        display: flex; justify-content: space-between;
-    }
-    .newest li>p{ padding:20px 0 20px 20px; }
-    .newest li:not(:nth-child(3)) p:nth-of-type(1){ font-size: 20px;}
-    .newest li:nth-child(3) p:nth-of-type(2){ font-size:14px; }
-    .newest li:nth-child(3) p:nth-of-type(2) b{ font-size:30px; margin-right: 10px;}
-    .newest li>a{ display: block; padding:10px 20px; color:#656565;}
-    .newest li>a img{ margin-left:20px;}
-
-
-
-    .news>div{
-        width:90%; margin:50px 5%;
-        display: flex; justify-content: space-between;
-        line-height: 30px;
-    }
-                                .news>div>h2:nth-of-type(1){font-size: 2rem;}
-
-    .news>div a{ 
-        padding-right:20px; color:#000;
-        background: url(../img/more-btn1.GIF) no-repeat right center; }
-    
-    
-            .news ol{ 
-                width:90%; margin:0 5%; display: flex; justify-content: space-between; 
-                flex-wrap: wrap;
+            .tmNav{
+                display:none;
             }
-            .news ol li{ width:49%; margin:20px 0;}
             
-            
-
-    .news ol li:nth-child(1) a{
-        background: url(../img/20240223035036704.jpg) no-repeat center top/100% auto;
-    }
-    .news ol li:nth-child(2) a{
-        background: url(../img/20240223021824141.jpg) no-repeat center top/100% auto;
-    }
-    .news ol li:nth-child(3) a{
-        background: url(../img/20240222014932317.jpg) no-repeat center top/100% auto;
-    }
-    .news ol li:nth-child(4) a{
-        background: url(../img/20240222060617951.jpg) no-repeat center top/100% auto;
-    }
-    .news p:nth-child(1){
-        width:65px; height:25px; border:1px solid #009178;
-        font-size:1rem; text-align: center; line-height: 25px;
-        color:#009178; border-radius: 5px;
-    }
-    .news p:nth-child(2){
-        margin:30px 0 50px 0; 
-        font-size:15px; color:#3d3d3d; font-size: 1.5rem;
-    }
-    .news p:nth-child(3){
-        font-size:14px; color:#656565; font-size: 1.2rem;
-    }
-
-            .stock{ 
-                width:90%; margin:50px 5%; 
-                display: flex; justify-content: space-between;}
-                
-            .stock>div{font-size: 1.2rem; width:49%; margin-bottom: 50px;}
-
-
-    .stock>div>div{
-        display: flex; justify-content: space-between;
-        height:40px; margin-bottom:30px;
-        line-height: 40px;
-    }
-    .stock>div>div a{
-        padding-right:25px; color: #000;
-        background: url(../img/more-btn1.GIF) no-repeat right center;
-    }
-    .stock table{ width:100%; border-spacing: 0 25px;}
-    .stock table td{ height:40px; }
-    .stock table td:last-child{ text-align: right;}
-    .stock table td a{ color:#000;}
-    .stock table td a:hover{ color: #d9d9d9;}
-
-    .stock li{  
-        border:1px solid #d9d9d9; border-radius: 10px; 
-        margin-bottom:20px;
-        display: flex; justify-content: space-between;
-        padding:20px 20px 0 20px;
-    }
-    .stock li p{ margin-bottom: 45px;}
-    .stock li a{ color:#000; }
-    .stock li a img{ margin-left:10px;}
-    .stock li a:hover{ opacity: 0.5;}
-
-    .job{
-        width:100%; height:250px;
-        background: url(../img/bg-recruit.png) no-repeat center top/cover;
-    }
-    .job>div{ width:90%; margin:0 5%;}
-
-    .job p{ 
-        padding-top:70px; font-size:20px; color:#fff; 
-        line-height: 20px;
-    }
-    .job>div>div{ 
-        display: flex; justify-content: space-between; 
-        padding-top: 30px;}
-
-    .job a{
-        display: block; width:48%; height:50px;
-        margin-bottom: 20px; border-radius: 25px;
-        line-height: 50px; text-align: center;
-    }
-
-    .job a:first-child{ background: #fff; color:#000;}
-    .job a:last-child{ background: #3d3d3d; color:#fff;}
-    .job a:hover{
-        border:2px solid #fff; color:#fff;
-        background: none;
-    }
-
-    /*2-3. #footer*/
-
-    #footer{ 
-        clear:both; width:100%;  background: #000;
-        padding:30px 5% 50px 5%;
-     }
-    #footer>button{
-        position: fixed; right:30px; bottom:50px;
-        width: 45px; height:45px;
-        border-radius: 23px; background: #fff;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-
-    .footer_inner ul{ 
-        display: flex; justify-content: space-between; 
-        flex-wrap: wrap; text-align: center;}
-
-    .footer_inner li{ 
-        width:50%; line-height: 50px;
-        border-bottom:1px solid rgba(255,255,255,0.2);
-        font-size:14px;
-    }
-    .footer_inner a{ color:#fff; }
-    .footer_bottom{ margin-top:50px; }
-
-    .footer_bottom *{ 
-        color: rgba(255,255,255,0.6);  font-size:14px;
-        margin-bottom:10px; font-style: normal;}
-
-    .footer_bottom a{ display: block;}
-    .footer_bottom>a{ margin-top:50px; }
-}
-
-        /*개별 미디어 쿼리 추가*/
-        @media screen and (min-width:441px) and (max-width:741px) {
-            .news ol li a{ 
-                display: block;
-                padding-top:200px; 
-                transition: all 0.3s ease;
-            }
-        }
-        @media screen and (min-width:741px) and (max-width:1041px) {
-            .news ol li a{ 
-                display: block;
-                padding-top:280px; 
-                transition: all 0.3s ease;
-            }
-        }
-        @media screen and (min-width:1041px) and (max-width:1279px) {
-            .news ol li a{ 
-                display: block;
-                padding-top:340px; 
-                transition: all 0.3s ease;
-            }
-        }
-
-
-
-
-
-/*3.모바일 미디어쿼리: CSS코드를 해독하는 미디어 환경의 (스크린 폭이 최대 440px 이하일 경우) {}괄호 안의 CSS를 처리.*/
-@media screen and (max-width:440px) {
-
-
-            #header{
-                position: fixed; left:0; top:0; z-index:1;
-                width:100%; height:80px;
-                display: flex; justify-content: space-between;
-                background: #fff; 
-                box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
-                transition: all 0.3s ease;
-            }    
-            h1{ margin:25px 0 0 30px; }
-
-
-            /*모바일~태블릿의 전역메뉴는 데스크탑과 완전 다릅니다!!!새롭게 제작*/
-            nav{
-
-                margin-left: 100%; /*js에서 메뉴 출력 버튼 클릭시 100% ▶ 0% 애니메이션 효과 추가*/
-
-                position:fixed; left:0; top:0;  
-                width:100%; height:100%;
-                background: #fff;
-            }
-            .gnb{margin-top:80px; border-top:2px solid #009178;}
-            .gnb::before{
-                content:"닫기";
-                position: absolute; 
-                top:30px; right:30px;
-                color:#009178;
-            }
-            /*ios,안드로드 디자인 가이드 버튼의 크기, 터치 영역 최소40px*/
-            .gnb a{
-                display: block; height:45px;   
-                text-align: right; line-height: 45px;
-                padding-right:30px; color:#000;
-                border-bottom:1px solid #d9d9d9;                 
-            }
-            .gnb>li>ul{ display: none;}
-            .gnb>li>ul a{
-                background: #009178; color:#fff;
+            .gnb{
+                display: flex;
             }
 
-            .util_menu li:not(:last-child){ display: none; }
-            .util_menu li:last-child{ margin:25px 25px 0 0;}
-
-
-
-            /*2-2. #main*/
-            /*main 공통 스타일*/
-            #main{ margin-top:80px; }
-
-            #main section:not(:nth-child(3)) h2{ display: none;}
-            .company{ width:100%; height:550px; overflow:hidden; }
-            .company ul{width:200%; height:550px; display: flex; }
-            .company ul li{ flex:1; text-align: center; transition: all 0.3s ease;}
-
-
-            .company ul li:first-child{
-                background: url(../img/20231207060014190_tm.png) no-repeat center top/auto 100% #009178;
-                
-            }
-            .company ul li:last-child{
-                background: url(../img/20230518085527647_tm.jpg) no-repeat center top/auto 100%;
-                
-            } 
-            .company li img{ 
-
-                width:270px; margin-top:250px; }
-    
-            .company>div{
-                position: absolute; left:50%; margin: -100px 0 0 -75px;
-
-                width:150px; height:40px; border-radius: 20px;
-                background: rgba(0,0,0,0.6);
-                display: flex; justify-content: space-around;
-                position: absolute; 
-            }
-            .company>div span{
-                line-height: 40px; color:#fff;
+            .gnb>li{
+                margin:0 20px; text-align: center;
             }
 
-
-            .newest{ width:90%; margin:50px 5%; background: #f5fbfa;}
-            .newest>div ul li{
-                width:100%; height:280px;
-                margin-bottom: 20px;
-                border-radius: 20px;
-                box-shadow: 0 0 10px rgba(0,0,0,0.4);
+            .gnb>li>a{ 
+                display: block; width:100px; height:80px; line-height:80px; 
+            }
+            .gnb>li>ul a{ 
+                display:block; height:40px; line-height:40px; 
+                font-size:14px;
             }
 
-            .newest>div ul li:nth-child(1){
+            .util{
+                display: flex;
+            }
+            .util li{
+                margin: 22px 20px 0 0;
+            }
+
+            #container{
+                margin-top:80px;
+            }
+
+            #container section:not(:nth-child(3)) h2{ display:none; }
+
+            .company{
+                width:100%; height:650px;
+            }
+
+            .slide{
+                width:200%; height:650px; display: flex;
+            }
+
+            .slide li{ flex:1;}
+            .s1{background: url(../img/20231207060014190.png) no-repeat center top/cover #009178;}
+            .s2{background: url(../img/20230518085527647.jpg) no-repeat center top/cover;}
+            .slide li div{ width:1200px; margin:0 auto; }
+            .slide li div img{ width:50%; margin: 170px 0 0 100px;}
+
+            .slideBtn{ 
+                position: absolute; left: 50%; margin: -150px 0 0 -600px;
+                width:150px; height: 40px; background: rgba(0,0,0,0.6); border-radius: 20px;
+            }
+
+            .slideBtn button{ margin:10px 15px; }
+            .slideBtn span{ color:#fff; }
+
+
+            /*newest*/
+
+            .newest{
+                width: 100%; height:670px; background: #f5fbfa;
+            }
+
+            .newestWrap{
+                width:1200px;height:670px; margin: -50px auto 0 auto;
+            }
+
+            .newestWrap ul{ display: flex; justify-content: space-between; flex-wrap:wrap; }
+            .newestWrap ul li{ 
+                width:32%; height:280px; margin-bottom: 20px;
+                border-radius: 20px; 
+                box-shadow: 0 0 5px rgba(0,0,0,0.4);
+
+            }
+            .newestWrap ul li:nth-child(1){
                 background: url(../img/bg-hanagroup.png) no-repeat right 30px bottom 30px #fff;
-                /*
-                    다중 백그라운드 이미지 설정 방법
-
-                    background: url() repeat position/size,   <--- 제일 상단에 배치
-                                url() repeat position/size,
-                                url() repeat position/size background-color   <----제일 하단에 배치
-
-                    ex)
-
-                    background: url(../img/bg-result.png) no-repeat right 30px bottom 30px/50px auto,
-                        url(../img/bg-hanagroup.png) no-repeat right 30px bottom 30px/50px auto aquamarine;
-                */
             }
-            .newest>div ul li:nth-child(2){
+            .newestWrap ul li:nth-child(2){
                 background: url(../img/bg-global.png) no-repeat right 30px bottom 30px #fff;
             }
-            .newest>div ul li:nth-child(3){
-                background: url(../img/bg-shareprice-m.png) no-repeat right bottom/250px auto #effbf7;
+            .newestWrap ul li:nth-child(3){
+                background: url(../img/bg-shareprice-m.png) no-repeat right bottom/200px auto  #effbf7;
             }
-            .newest>div ul li:nth-child(4){
+            .newestWrap ul li:nth-child(4){
                 background: url(../img/20230731075409661.jpg) no-repeat right  bottom 20px/150px auto #fff;
             }
-            .newest>div ul li:nth-child(5){
+            .newestWrap ul li:nth-child(5){
                 background: url(../img/20230524092725713.jpg) no-repeat right  bottom 20px/150px auto #fff;
             }
-            .newest>div ul li:nth-child(6){
+            .newestWrap ul li:nth-child(6){
                 background: url(../img/bg-result.png) no-repeat right 30px bottom 30px #fff;
             }
 
-            .newest h3{ height:50px; border-bottom: 1px solid #d9d9d9;}
-            .newest h3 a{
-                display: block; width:100%; border-radius: 20px 20px 0 0;
-                padding:12px 20px; color:#000;
-                display: flex; justify-content: space-between;
+            .newestWrap p:nth-child(1){ 
+            height:50px; font-size:18px; line-height: 50px; 
+            padding-left:20px; 
+            border-bottom:1px solid #d9d9d9;
+            margin-bottom:20px;
             }
-            .newest li>p{ padding:20px 0 20px 20px; }
-            .newest li:not(:nth-child(3)) p:nth-of-type(1){ font-size: 20px;}
-            .newest li:nth-child(3) p:nth-of-type(2){ font-size:14px; }
-            .newest li:nth-child(3) p:nth-of-type(2) b{ font-size:30px; margin-right: 10px;}
-            .newest li>a{ display: block; padding:10px 20px; color:#656565;}
-            .newest li>a img{ margin-left:20px;}
-
-
-
-            .news>div{
-                width:90%; margin:50px 5%;
-                display: flex; justify-content: space-between;
-                line-height: 30px;
+            .newestWrap p:first-child a{ 
+                width:93%; height:50px; display: block;
+                background: url(../img/more-btn3.GIF) no-repeat right center; 
             }
-            .news>div a{ 
-                padding-right:20px; color:#000;
-                background: url(../img/more-btn1.GIF) no-repeat right center; }
-            .news ol{ width:90%; margin:0 5%; }
 
-            .news ol li{ margin:20px 0;}
+
+            .newestWrap li:not(:nth-child(3)) p:nth-child(2){
+                padding-left:20px; font-size: 20px; font-weight: 600;
+            }
+
+            .newestWrap li:nth-child(1) p:nth-child(3),.newestWrap li:nth-child(2) p:nth-child(3)
+            { margin:60px 0 0 20px; font-size: 14px; color:#999;}
+
+
+            .newestWrap li:nth-child(3) p:nth-child(2){ 
+                margin: 0 0 20px 20px;
+            }
+            .newestWrap li:nth-child(3) p:nth-child(3){ 
+                margin: 0 0 40px 20px; font-size:14px; font-weight: 800;
+            }
+            .newestWrap li:nth-child(3) p:nth-child(3) b{
+                font-size:30px; margin-right:5px;
+                font-weight: 900;
+            }
+
+            .newestWrap li:nth-child(3) p:nth-child(4){ 
+                margin-left:20px;
+            }
+
+            .newestWrap li:nth-child(3)~li>a{
+                position: absolute; padding:10px 40px 10px 15px; border-radius: 30px; 
+                background:url(../img/download-btn.gif) no-repeat right 20px center;
+                margin:20px 0 0 20px; font-size:12px;
+            }
+
+            .newestWrap li:nth-child(3)~li>a:last-child{ margin-top:80px; }
+
+            .news{
+                width:1200px; height:550px; margin:0 auto;
+            }
+
+            .news h2{
+                float:left; margin:80px 0 30px 0;
+            }
+            .news>a{float:right; display: block; 
+                    margin:80px 0 30px 0; padding-right:20px; 
+                    background: url(../img/more-btn1.GIF) no-repeat right center;    
+                    }
+            .news ol{
+                clear: both; display: flex; justify-content: space-between;
+            }
             
+            .news li{ width:24.5%; }
+            .news img{ width:100%; border-radius: 20px;}
 
-            .news ol li:nth-child(1) a{
-                background: url(../img/20240223035036704.jpg) no-repeat center top/100% auto;
-            }
-            .news ol li:nth-child(2) a{
-                background: url(../img/20240223021824141.jpg) no-repeat center top/100% auto;
-            }
-            .news ol li:nth-child(3) a{
-                background: url(../img/20240222014932317.jpg) no-repeat center top/100% auto;
-            }
-            .news ol li:nth-child(4) a{
-                background: url(../img/20240222060617951.jpg) no-repeat center top/100% auto;
-            }
-            .news p:nth-child(1){
-                width:65px; height:25px; border:1px solid #009178;
-                font-size:14px; text-align: center; line-height: 25px;
-                color:#009178; border-radius: 5px;
-            }
             .news p:nth-child(2){
-                margin:30px 0 50px 0; 
-                font-size:15px; color:#3d3d3d;
-            }
-            .news p:nth-child(3){
-                font-size:14px; color:#656565;
+                border:1px solid #0c8570; margin:10px 0; 
+                width:60px; height:25px; color: #0c8570; font-size: 14px;
+                text-align: center; line-height: 20px; border-radius: 3px;
             }
 
-            .stock{ width:90%; margin:50px 5%; }
-            .stock>div{ margin-bottom: 50px;}
+            .news p:nth-child(3){ font-weight: 700; margin-bottom:50px;}
+            .news p:nth-child(4){ font-size: 14px; color:#999;  }
 
+            .business{ width:1200px; height:350px; margin:0 auto; display: flex; justify-content: space-between;}
+            .business>div{ width:48%; }
 
-            .stock>div>div{
-                display: flex; justify-content: space-between;
-                height:40px; margin-bottom:30px;
-                line-height: 40px;
+            .business h3{ 
+                font-size:25px; font-weight: 700; margin-bottom:30px; 
+                float:left;
             }
-            .stock>div>div a{
-                padding-right:25px; color: #000;
+            .business>div>a{ 
+                float:right; display: block;
+                margin-top:10px; padding-right:20px;
                 background: url(../img/more-btn1.GIF) no-repeat right center;
             }
-            .stock table{ width:100%;}
-            .stock table td{ height:40px; }
-            .stock table td:last-child{ text-align: right;}
-            .stock table td a{ color:#000;}
-            .stock table td a:hover{ color: #d9d9d9;}
 
-            .stock li{  
-                border:1px solid #d9d9d9; border-radius: 10px; 
-                margin-bottom:20px;
-                display: flex; justify-content: space-between;
-                padding:20px 20px 0 20px;
+            .business div>*:nth-child(3){ clear: both; }
+
+            .business table{  width: 100%; }
+            .business td:first-child{ width:80%; height:40px;}
+            .business td:first-child a{ font-weight: 700;} 
+            .business td:last-child{ text-align: right;}
+
+            .business ol{ display: flex;}
+            .business li{ flex:1; border-left: 1px solid; padding-left:20px; }
+
+            .business li p:first-child{ font-weight: 700; margin-bottom:50px; }
+
+            .business li a{ 
+                padding-right:20px; 
+                background: url(../img/download-btn.gif) no-repeat right center;
             }
-            .stock li p{ margin-bottom: 45px;}
-            .stock li a{ color:#000; }
-            .stock li a img{ margin-left:10px;}
-            .stock li a:hover{ opacity: 0.5;}
 
-            .job{
-                width:100%; height:250px;
+            .job{ 
+                width:100%; height:250px; 
                 background: url(../img/bg-recruit.png) no-repeat center top/cover;
             }
-            .job>div{ width:90%; margin:0 5%;}
-   
-            .job p{ 
-                padding-top:70px; font-size:20px; color:#fff; 
-                line-height: 20px;
-            }
-            .job>div>div{ 
-                display: flex; justify-content: space-between; 
-                padding-top: 30px;}
-
-            .job a{
-                display: block; width:48%; height:50px;
-                margin-bottom: 20px; border-radius: 25px;
-                line-height: 50px; text-align: center;
+            .jobWrap{ 
+                width:1200px; height:250px; margin:0 auto;
+                display: flex; justify-content: space-between;
             }
 
-            .job a:first-child{ background: #fff; color:#000;}
-            .job a:last-child{ background: #3d3d3d; color:#fff;}
-            .job a:hover{
-                border:2px solid #fff; color:#fff;
-                background: none;
+            .jobWrap p{ font-size:30px; margin-top:60px; }
+            .jobWrap p b{ color:#fff; font-weight: 700; }
+
+            .jobWrap div{ margin-top:70px; }
+
+            .jobWrap a{ 
+                display: block;  
+                width:200px; height:50px; border-radius: 25px;
+                line-height:50px; padding-left: 20px;
+                margin-bottom:10px; 
             }
+            .jobWrap a:first-child{ 
+                background: #fff; font-weight: 600;}
 
-            /*2-3. #footer*/
+            .jobWrap a:last-child{ 
+                background: #292f35; font-weight: 600; color:#fff; }
 
-            #footer{ 
-                clear:both; width:100%;  background: #000;
-                padding:30px 5% 50px 5%;
-             }
-            #footer>button{
-                position: fixed; right:30px; bottom:50px;
-                width: 45px; height:45px;
-                border-radius: 23px; background: #fff;
-                box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            #footer{ width:100%; height:200px; background: #000; }
+
+            .footerTop{ width:100%; height:50px; border-bottom:1px solid rgba(255,255,255,0.3); }
+            .footerInner1{ 
+                width:1200px; height:50px; margin:0 auto;
+                display: flex; justify-content: space-between;
             }
+            .footerInner1 ul{ display: flex;}
+            .footerInner1 ul:first-child li{ margin: 12px 20px 0 0; }
+            .footerInner1 ul:last-child li{ margin: 12px 0 0 20px; }
+            .footerInner1 a{ color:#fff; }
 
-            .footer_inner ul{ 
-                display: flex; justify-content: space-between; 
-                flex-wrap: wrap; text-align: center;}
+            .footerBottom{ 
+                width:1200px; height:150px; margin:0 auto; 
+                display: flex; justify-content: space-between;}
 
-            .footer_inner li{ 
-                width:50%; line-height: 50px;
-                border-bottom:1px solid rgba(255,255,255,0.2);
-                font-size:14px;
+            .footerBottom *{ color:#fff; font-style: normal;
             }
-            .footer_inner a{ color:#fff; }
-            .footer_bottom{ margin-top:50px; }
+            .footerBottom p:first-child{ margin:10px 0;}
 
-            .footer_bottom *{ 
-                color: rgba(255,255,255,0.6);  font-size:14px;
-                margin-bottom:10px; font-style: normal;}
+            .footerBottom address, .footerBottom p:nth-of-type(2){ float:left; margin-right:30px;}
+            .footerBottom p:last-child{ clear: both; }
 
-            .footer_bottom a{ display: block;}
-            .footer_bottom>a{ margin-top:50px; }
+            .footerBottom>a{ margin-top:50px;}
+
+            .test{ 
+                display: none;
+                width:500px; height:300px; border:5px solid; 
+            }
+            .test table{ border:3px solid red; width:300px;}
+            .test table td{ border:2px solid green; height:100px;}
+            .test p{ border:3px solid; height:100px;}
+            .test a{ border:5px solid blue;  }
+
 }
 
-        /*개별 미디어쿼리 추가!!*/
-        @media screen and (max-width:360px) {
-            .news ol li a{ 
-                display: block; 
-                padding-top:190px; 
-                transition: all 0.3s ease;
-     
-                /*
-                    section16 전환과 변형(330page)
+/* 테블릿 미디어 스크린!! 반응형  */
+@media screen and (min-width:491px) and (max-width:1199px){
+
+        #header{position:fixed; background: #fff; left:0; top:0; z-index:1; width:100%; height:80px; 
+                display: flex; justify-content: space-between;
+        }
+        h1{margin:22px 0 0 20px;}
 
 
-                    transition : (1)  (2)   (3)
+        nav{ 
+        position:fixed; right:0; top:0; margin-right:-100%; width:100%; height:100%; background: white; }   
 
-                    (1)transition-property : 애니메이션(중간과정)을 적용 속성
-                    (2)transition-duration : 처리시간( 1s, 2s....)
-                    (3)transition-timing-function: 구간별 속도 재분배(334)
+        .tmNav{ height:80px; display: flex; justify-content: space-between; border-bottom:2px solid #009178; }
 
-                    * ease : 디폴트(기본값), 느리게 시작한 후 빨라지며 다시 느려집니다.
-                      linear : 처음부터 마지막까지 동일한 속도를 유지합니다.
-                      ease-in : 느린속도로 시작하여 끝지점에서 빨라집니다.
-                      ease-out : 빠른속도로 시작하여 끝지점에서 느리게 진행합니다. 
-                */
-            }
+        .tmNav a{ margin:22px 0 0 20px;  }
+
+        .tmNav button{ font-size:20px; color:#009178; margin-right:20px; }
+
+        .gnb>li{ display: flex;}
+
+        .gnb>li>a{ width:40%; height:80px; line-height: 80px; padding-left:20px; background: rgba(0,0,0,0.03);}
+
+        .gnb>li:first-child>a{ background: white;}
+
+        .gnb>li>ul{ 
+            width:60%; height:calc(100% - 80px); 
+            position: fixed; right:0; top:80px; margin-right:-100%;
+            margin-left: 40%; background: white;}
+
+        .gnb>li>ul a{ display:block; height:70px; line-height: 70px; padding-left:20px; font-weight: 700; }
+
+        .util{ display: flex;}
+
+        .util li{ margin: 22px 20px 0 0; }
+
+        .util li:nth-child(2),.util li:nth-child(3){ display:none; }
+
+
+
+        #container{ margin-top:80px;}
+        #container section:not(:nth-child(3)) h2{ display:none; }
+
+        .company{ overflow: hidden; width:100%; height:650px; }
+
+        .slide{ width:200%; height:520px; display: flex; }
+
+        .slide li{ flex:1;}
+        .s1{background: url(../img/20231207060014190_tm.png) no-repeat center top/cover #009178;}
+        .s2{background: url(../img/20230518085527647_tm.jpg) no-repeat center top/cover;}
+        .slide li div img{ width:40%; margin: 60px 0 0 50px;}
+
+        .slideBtn{ 
+        position: absolute; width:150px; height: 40px;
+        left:30px; top:500px; 
+        background: rgba(0,0,0,0.6); border-radius: 20px;}
+        .slideBtn button{ margin:10px 15px; }
+        .slideBtn span{ color:#fff; }
+
+
+        .newest{width: 100%; background: #f5fbfa;}
+        .newestWrap{ margin: -50px auto 0 auto;}
+
+        .newestWrap ul li{ 
+        width:92%; height:280px; margin: 0 auto 50px auto; border-radius: 20px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.4);
         }
 
-        @media screen and (min-width:361px) and (max-width:440px) {
-            .news ol li a{ 
-                display: block;
-                padding-top:240px; 
-                transition: all 0.3s ease;
-            }
+        .newestWrap ul li:nth-child(1){background: url(../img/bg-hanagroup.png) no-repeat right 30px bottom 30px #fff;}
+        .newestWrap ul li:nth-child(2){background: url(../img/bg-global.png) no-repeat right 30px bottom 30px #fff;}
+        .newestWrap ul li:nth-child(3){background: url(../img/bg-shareprice-m.png) no-repeat right bottom/200px auto  #effbf7;}
+
+        .newestWrap ul li:nth-child(4){background: url(../img/20230731075409661.jpg) no-repeat right 30px bottom 100px/150px auto #fff;}
+        .newestWrap ul li:nth-child(5){background: url(../img/20230524092725713.jpg) no-repeat right 30px bottom 100px/150px auto #fff;}
+        .newestWrap ul li:nth-child(6){background: url(../img/bg-result.png) no-repeat right 80px bottom 100px #fff;}
+
+
+        .newestWrap p:nth-child(1){ height:50px; font-size:18px; line-height: 50px; padding-left:20px; border-bottom:1px solid #d9d9d9;
+                                margin-bottom:20px;}
+        .newestWrap p:first-child a{ width:93%; height:50px; display: block; background: url(../img/more-btn3.GIF) no-repeat right center; }
+        .newestWrap li:not(:nth-child(3)) p:nth-child(2){ padding-left:20px; font-size: 20px; font-weight: 600;}
+        .newestWrap li:nth-child(1) p:nth-child(3),.newestWrap li:nth-child(2) p:nth-child(3){ margin:60px 0 0 20px; 
+                                        font-size: 14px; color:#999;}
+        .newestWrap li:nth-child(3) p:nth-child(2){ margin: 0 0 20px 20px;}
+        .newestWrap li:nth-child(3) p:nth-child(3){margin: 0 0 40px 20px; font-size:14px; font-weight: 800; }
+        .newestWrap li:nth-child(3) p:nth-child(3) b{font-size:30px; margin-right:5px; font-weight: 900; }
+        .newestWrap li:nth-child(3) p:nth-child(4){ margin-left:20px;}
+
+
+        .newestWrap li:nth-child(3)~li>a{
+            display: block; border:1px solid #d9d9d9; 
+            width:45%; margin: 80px 0 0 2.5%;
+            height:40px; line-height:40px; padding-left:20px;
+            float:left; border-radius: 30px; font-size:12px;
+            background:url(../img/download-btn.gif) no-repeat right 20px center; 
+            
         }
+
+
+
+
+        .news h2{ float:left; font-size:18px; margin:80px 0 30px 20px; font-weight: 700;}
+        .news>a{ float:right; display: block; margin:80px 20px 30px 0; padding-right:20px; 
+        background: url(../img/more-btn1.GIF) no-repeat right center; }
+
+        .news ol{ clear: both; }
+        .news li{ width: 92%; margin:0 auto; }
+        .news li:not(:first-child){ display: none;}
+
+        .news img{ width:100%; border-radius: 20px;}
+
+        .news p:nth-child(2){
+            border:1px solid #0c8570; width:60px; height:25px; text-align: center; line-height: 20px;
+        font-size: 14px; color: #0c8570; border-radius: 3px; margin:10px 0;
+        }
+
+        .news p:nth-child(3){ font-weight: 700; margin-bottom:50px;}
+        .news p:nth-child(4){ font-size: 14px; color:#999;  }
+
+        .business>div{ width:92%; margin:100px auto 50px auto; }
+        .business h3{ font-size:20px; font-weight: 700; margin-bottom:30px; float:left;}
+
+        .business>div>a{ float:right; display: block; margin-top:10px; padding-right:20px;
+        background: url(../img/more-btn1.GIF) no-repeat right center;
+        }
+
+        .business div>*:nth-child(3){ clear: both; }
+        .business table{  width: 100%; }
+        .business td:first-child{ width:80%; height:40px;}
+        .business td:first-child a{ font-weight: 700;} 
+        .business td:last-child{ text-align: right;}
+
+        .business ol{ width:100%; margin:0 auto;}
+
+        .business li{ 
+        border: 1px solid #d9d9d9; border-radius: 10px; 
+        padding:20px; margin-bottom: 10px; display: flex; justify-content: space-between;
+        }
+
+        .business li p:first-child{ font-weight: 700; }
+        .business li a{padding-right:20px; background: url(../img/download-btn.gif) no-repeat right center;}
+
+        .job{
+        width:100%; height:250px; 
+        background: url(../img/bg-recruit.png) no-repeat center top/cover;
+        }
+
+        .jobWrap p{ font-size:20px; padding:60px 0 0 20px; }
+        .jobWrap p b{ color:#fff; font-weight: 700; }
+
+
+        .jobWrap div{ 
+        width: 92%; margin:30px auto 0 auto;  
+        display: flex; justify-content: space-between;
+        }
+
+        .jobWrap a{ display: block; width:48%; height:50px; border-radius: 25px; line-height:50px; 
+        padding-left: 20px; margin-bottom:10px;}
+        .jobWrap a:first-child{ background: white; font-weight: 600;}
+        .jobWrap a:last-child{background: #292f35; font-weight: 600; color:white; }
+
+        #footer{ width:100%; padding:30px 4% 100px 4%; background: #000; }
+        #footer *{ color:#d9d9d9; font-size:14px;}
+
+        .footerTop ul:first-child{ display: flex; flex-wrap: wrap; margin-bottom: 40px;}
+
+        .footerTop ul:first-child li{
+        width:50%; text-align: center;  height:40px; line-height: 40px;
+        border-bottom:1px solid rgba(255,255,255,0.2);
+        }
+
+        .footerTop ul:last-child{ display: flex; justify-content: space-between; 
+        padding:0 30px; margin-bottom:40px;}
+
+        .footerInner2>*{ font-style: normal; padding-left:20px; margin-bottom:10px; }
+
+        .footerBottom>a{ position: absolute; right:4%; margin-top:20px; }
+
+
+}
+
+/* 모바일 미디어 스크린!! 반응형  */
+@media screen and (max-width:490px) {
+
+        #header{ position:fixed; background: #fff; left:0; top:0; z-index:1; width:100%; height:80px; 
+                display: flex; justify-content: space-between;
+                }
+        h1{ margin:22px 0 0 20px; }
+
+        nav{ 
+            position:fixed; right:0; top:0; margin-right:-100%; width:100%; height:100%; background: white;
+        }   
+
+        .tmNav{ height:80px; display: flex; justify-content: space-between; border-bottom:2px solid #009178;}
+
+        .tmNav a{ margin:22px 0 0 20px;  }
+        .tmNav button{ font-size:20px; color:#009178; margin-right:20px; }
+        .gnb>li{ display: flex;}
+        
+        .gnb>li>a{ width:40%; height:80px; line-height: 80px; padding-left:20px; background: rgba(0,0,0,0.03);}
+        .gnb>li:first-child>a{ background: white;}
+        .gnb>li>ul{ 
+            width:60%; height:calc(100% - 80px); 
+            position: fixed; right:0; top:80px; margin-right:-100%;
+            margin-left: 40%; background: white;
+        }
+        .gnb>li>ul a{ display:block; height:70px; line-height: 70px; padding-left:20px; font-weight: 700; }
+        .util{ display: flex;}
+        .util li{ margin: 22px 20px 0 0; }
+        .util li:nth-child(2),.util li:nth-child(3){ display:none; }
+
+
+
+        #container{ margin-top:80px;}
+        #container section:not(:nth-child(3)) h2{ display:none; }
+
+        .company{ overflow: hidden; width:100%; height:650px; }
+
+        .slide{ width:200%; height:520px; display: flex; }
+        .slide li{ flex:1;}
+
+        .s1{background: url(../img/20231207060014190_tm.png) no-repeat center top/cover #009178;}
+        .s2{background: url(../img/20230518085527647_tm.jpg) no-repeat center top/cover;}
+        .slide li div img{ width:65%; margin: 60px 0 0 210px;}
+
+        .slideBtn{ 
+            position: absolute; width:150px; height: 40px;
+            left:30px; top:500px; background: rgba(0,0,0,0.6); border-radius: 20px;
+        }
+        .slideBtn button{ margin:10px 15px; }
+        .slideBtn span{ color:white; }
+
+
+        .newest{width: 100%; background: #f5fbfa;}
+        .newestWrap{ margin: -50px auto 0 auto;}
+
+        .newestWrap ul li{ 
+            width:92%; height:280px; margin: 0 auto 50px auto; border-radius: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.4);
+        }
+
+
+        .newestWrap ul li:nth-child(1){background: url(../img/bg-hanagroup.png) no-repeat right 30px bottom 30px #fff;}
+        .newestWrap ul li:nth-child(2){background: url(../img/bg-global.png) no-repeat right 30px bottom 30px #fff;}
+        .newestWrap ul li:nth-child(3){background: url(../img/bg-shareprice-m.png) no-repeat right bottom/200px auto  #effbf7;}
+        .newestWrap ul li:nth-child(4){background: url(../img/20230731075409661.jpg) no-repeat right  bottom 20px/150px auto #fff;}
+        .newestWrap ul li:nth-child(5){background: url(../img/20230524092725713.jpg) no-repeat right  bottom 20px/150px auto #fff;}
+        .newestWrap ul li:nth-child(6){background: url(../img/bg-result.png) no-repeat right 30px bottom 30px #fff;}
+        .newestWrap p:nth-child(1){ height:50px; font-size:18px; line-height: 50px; padding-left:20px; border-bottom:1px solid #d9d9d9;
+                                    margin-bottom:20px;}
+
+        .newestWrap p:first-child a{ width:93%; height:50px; display: block; background: url(../img/more-btn3.GIF) no-repeat right center; }
+        .newestWrap li:not(:nth-child(3)) p:nth-child(2){ padding-left:20px; font-size: 20px; font-weight: 600;}
+
+        .newestWrap li:nth-child(1) p:nth-child(3),.newestWrap li:nth-child(2) p:nth-child(3){
+            margin:60px 0 0 20px; font-size: 14px; color:#999;}
+
+        .newestWrap li:nth-child(3) p:nth-child(2){ margin: 0 0 20px 20px;}
+
+        .newestWrap li:nth-child(3) p:nth-child(3){margin: 0 0 40px 20px; font-size:14px; font-weight: 800; }
+
+        .newestWrap li:nth-child(3) p:nth-child(3) b{font-size:30px; margin-right:5px; font-weight: 900; }
+
+        .newestWrap li:nth-child(3) p:nth-child(4){ margin-left:20px;}
+
+        .newestWrap li:nth-child(3)~li>a{position: absolute; padding:10px 40px 10px 15px; border-radius: 30px;
+            background:url(../img/download-btn.gif) no-repeat right 20px center; margin:20px 0 0 20px; font-size:12px;
+        }
+
+        .newestWrap li:nth-child(3)~li>a:last-child{ margin-top:80px;}
+
+
+        
+
+        .news h2{ float:left; font-size:18px; margin:80px 0 30px 20px; font-weight: 700;}
+        .news>a{ float:right; display: block; margin:80px 20px 30px 0; padding-right:20px; 
+            background: url(../img/more-btn1.GIF) no-repeat right center;}
+        .news ol{ clear: both; }
+
+        .news li{ width: 92%; margin:0 auto; }
+        .news li:not(:first-child){ display: none;}
+
+        .news img{ width:100%; border-radius: 20px;}
+
+        .news p:nth-child(2){ border:1px solid #0c8570; width:60px; height:25px; text-align: center; line-height: 20px;
+            font-size: 14px; color: #0c8570; border-radius: 3px; margin:10px 0;}
+
+        .news p:nth-child(3){ font-weight: 700; margin-bottom:50px;}
+        .news p:nth-child(4){ font-size: 14px; color:#999;  }
+
+        .business>div{ width:92%; margin:100px auto 50px auto; }
+        .business h3{ font-size:20px; font-weight: 700; margin-bottom:30px; float:left;}
+        .business>div>a{ float:right; display: block; margin-top:10px; padding-right:20px;
+            background: url(../img/more-btn1.GIF) no-repeat right center;}
+
+        .business div>*:nth-child(3){ clear: both; }
+
+        .business table{  width: 100%; }
+
+        .business td:first-child{ width:80%; height:40px;}
+
+        .business td:first-child a{ font-weight: 700;} 
+
+        .business td:last-child{ text-align: right;}
+
+
+        .business ol{ width:92%; margin:0 auto;}
+
+        .business li{ 
+            border: 1px solid #d9d9d9; border-radius: 10px; 
+            padding:20px; 
+            margin-bottom: 10px;
+            display: flex; justify-content: space-between;
+        }
+
+        .business li p:first-child{ font-weight: 700; }
+        .business li a{padding-right:20px; background: url(../img/download-btn.gif) no-repeat right center;}
+
+        .job{
+            width:100%; height:250px; 
+            background: url(../img/bg-recruit.png) no-repeat center top/cover;
+        }
+
+        .jobWrap p{ font-size:20px; padding:60px 0 0 20px; }
+        .jobWrap p b{ color:#fff; font-weight: 700; }
+
+
+        .jobWrap div{ 
+            width: 92%; margin:30px auto 0 auto;  
+            display: flex; justify-content: space-between;
+        }
+
+        .jobWrap a{ display: block; width:48%; height:50px; border-radius: 25px; line-height:50px; 
+            padding-left: 20px; margin-bottom:10px;}
+
+        .jobWrap a:first-child{ background: white; font-weight: 600;}
+
+        .jobWrap a:last-child{background: #292f35; font-weight: 600; color:white; }
+        #footer{ width:100%; padding:30px 4% 100px 4%; background: #000; }
+
+        #footer *{ color:#d9d9d9; font-size:14px;}
+
+        .footerTop ul:first-child{ display: flex; flex-wrap: wrap; margin-bottom: 40px;}
+
+        .footerTop ul:first-child li{
+            width:50%; text-align: center;  height:40px; line-height: 40px;
+            border-bottom:1px solid rgba(255,255,255,0.2);
+        }
+        .footerTop ul:last-child{ display: flex; justify-content: space-between; 
+        padding:0 30px; margin-bottom:40px;}
+
+        .footerInner2>*{ font-style: normal; padding-left:20px; margin-bottom:10px; }
+
+        .footerBottom>a{ position: absolute; right:4%; margin-top:20px; }
+
+
+}
+
+
