@@ -5,17 +5,24 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
         <title>하나금융그룹</title>
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/sub_style.css">
+        <link rel="stylesheet" href="css/subStyle.css">
+        <script src="http://code.jquery.com/jquery-1.9.0rc1.js"></script>
+        <script src="js/motion.js"></script>
     </head>
     <body>
-        <!--1-->
+
         <header id="header">
-            <!--1.1.사이트 제1제목-->
+
             <h1><a href="index.html"><img src="img/logo.JPG" alt="하나금융그룹"></a></h1>
 
-            <!--1.2.전역메뉴(탐색요소 집합)-->
             <nav>
-                <!--명시도 10-->
+
+                <div class="tmNav">                    
+                    <a href="index.html"><img src="img/logo.JPG" alt="하나금융그룹"></a>
+                    <button>X</button>
+                </div>
+
+
                 <ul class="gnb">
                     <!--대메뉴1-->
                     <li>
@@ -64,177 +71,207 @@
                 </ul>
             </nav>
 
-            <!--1.3.사용자에게 유용한 기능을 제공하는 유틸 메뉴-->
-            <ul class="util_menu">
+
+            <ul class="util">
                 <li><a href="#"><img src="img/util-menu1.gif" alt="주식정보 보러가기"></a></li>
-                <li><a href="#"><img src="img/util-menu2.gif" alt="하나네트워크 보러가기"></a></li>
-                <li><a href="#"><img src="img/util-menu3.gif" alt="언어변경"></a></li>
-                <li><a href="#"><img src="img/util-menu4.gif" alt="사이트맵"></a></li>
+                <li><a href="#"><img src="img/util-menu2.gif" alt="하나네트워크 소식 보러가기"></a></li>
+                <li><a href="#"><img src="img/util-menu3.gif" alt="웹사이트 이용시 언어 변경 보러가기"></a></li>
+                <li><a href="#"><img src="img/util-menu4.gif" alt="사이트맵 보러가기"></a></li>
             </ul>
 
         </header>
 
-        <!--2-->
-        <main id="sub_main">
+        <div id="subContainer">
 
-            <!--전체 서브 공통 콘텐츠-->
-            <div class="sub_title">
-                <!--2.1 서브 타이틀(h2)구역 -->
-                <div class="sub_visual sub1_bg">
-                    <h2>그룹소개</h2>
-                    <p>하나금융 그룹을 소개합니다.</p>
-                </div>
-                
-                <!--2.2 서브 LNB(Local Navigation bar)-->
-                <div class="lnb">
 
+            <div class="subTitle sub1Bg">
+                <h2>그룹소개</h2>
+                <p>하나금융 그룹을 소개합니다. </p>
+            </div>
+
+            <div class="subLnb">
+                <div>
+                    
                     <a href="index.html">홈</a>
-
+                
+                    <a href="hanaValueList.html">그룹소개</a>
+    
                     <ul>
-                        <li>
-                            <a href="hanaValueList.html">그룹소개</a>
-                            <ul>
-                                <li><a href="vision.html">그룹비전</a></li>
-                                <li><a href="hanaValueList.html">핵심가치</a></li>                                
-                            </ul>
-                        </li>
+                        <li><a href="vision.html">그룹비전</a></li>
+                        <li><a href="hanaValueList.html">핵심가치</a></li>
                     </ul>
 
                 </div>
+
             </div>
 
-            <!--개별 서브 콘텐츠 구역-->
-            <div class="vision">
+
+
+
+            <div class="subContent vision">
                 <h3>그룹비전</h3>
 
-                <!--1.그룹비전 개요-->
+                <!--서브페이지 정보구성 ,, 길지만 적어보는 시각장애인을 위해 alt-->
                 <div>
-                    <img src="sub_img/vision-main.png" alt="O.N.E value 2030, Our Value, New Value, Extra Value">
-                </div>
+                    <img src="sub_img/vision-main.png" alt="함께 성장하면 행복을 나누는 금융
+                    Growing Together, SharingHappiness
+                    2030비전
+                    하나로 연결된 모두의 금융
+                    All Connected in Hana Finance
+                    전략목표
+                    O.N.E. value 2030
+                    Our value, 손님을 우선하는 하나만의 가치를 실현
+                    New value, 지속가능경영 실현으로 새로운 가치를 제공
+                    Extra value, 변화에 적극적으로 대응하여 더 나은 가치를 창출
+                    주요테마
+                    C-O-N-NE-C-T
+                    Closer to customers 미래 생태계 구축
+                    One lifelong partnership 손님 全 생애 관리 금융 제공
+                    Next generation CIB 테크 기반 기업 손님 확대
+                    NEw perspectives on value ESG 경영
+                    Cultivate investment capabilities 투자 기반 역량 확충
+                    Transmit tech DNA 데이터, 디지털역량, 혁신 조직 등 빅테크 向 DNA 내재화
+                    핵심가치
+                    Passion 열정
+                    Openness 열린마음
+                    With Customer 손님 우선
+                    Excellence 전문성
+                    Respect 존중과 배려">
 
-                <!--2.미션-->
-                <div>
-                    <!--css h4{ position:sticky; top:80px; }-->
-                    <h4>미션</h4>
-                    <!--css div{ margin-left:400px; }-->
+                    <!--1.미션-->
                     <div>
-                        <img src="sub_img/vision-mission-01.png" alt="함께 성장하며 행복을 나누는 금융-실현,이행,추구">
-                        <img src="sub_img/vision-mission-02.png" alt="함께 성장하며 행복을 나누는 금융-추구,사회기여,행복추구">
-                    </div>
-                </div>
-
-                <!--3.비전-->
-                <div>
-                    <!--css h4{ position:sticky; top:80px; }-->
-                    <h4>2030비전</h4>
-                    <!--css div{ margin-left:400px; }-->
-                    <div>
-                        <!--1.비전 개요-->
+                        <h4>미션</h4>
                         <div>
-                            <p>하나금융그룹의 미션은 시대적 요구와 변화에 적극적으로 동참하며 기업의 사회적 책임을 다하겠다는 의지의 선언입니다.</p>
+                            <img src="sub_img/vision-mission-01.png" alt="함께 성장하며(Growing Together)
+                            일하기 좋은 직장 실현
+                            사회적 책임 이행
+                            행복한 성장 추구
+                            하나금융그룹은 손님, 직원, 주주, 사회와 함께 발전하고 지속 가능한 성장 및 사회적 책임 이행을 균형적으로 추구합니다.">
+                            <img src="sub_img/vision-mission-02.png" alt="행복을 나누는 금융(Sharing Happiness)
+                            공유 가치 추구
+                            성장과 사회 기여
+                            모든 구성원의 행복 추구
+                            하나금융그룹은 금융업 본연의 역활을 다하면서 모든 이해관계자의 행복 추구에 동참할 것입니다.">
 
-                            <p>하나금융그룹은 보다 나은 사회를 만들기 위해, 함께 노력하는 모든 이해관계자가 성장할 수 있는 활동을 지원하고, 지속 가능한<br>
+                            <p class="visionLine">하나금융그룹의 미션은 시대적 요구와 변화에 적극적으로 동참하며 기업의 사회적 책임을 다하겠다는 의지의 선언입니다.</p>
+
+                            <p>하나금융그룹은 보다 나은 사회를 만들기 위해, 함께 노력하는 모든 이해관계자가 성장할 수 있는 활동을 지원하고, 지속 가능한<br> 
                             성장과 사회적 책임을 균형 있게 이루어 나가는 ‘행복한 성장’을 추구합니다.</p>
-                            
-                            <p>지금껏 그래왔듯이 하나금융그룹은 본연의 역할을 충실히 수행하면서 모든 이해관계자들과는 성장 이익을 함께 나누고 금융을<br>
-                            통한 공유가치 창출을 통해 사회구성원들의 행복 추구에 적극 동참할 것입니다.</p>
-                            
-                            <p><b>하나로 연결된 모두의 금융<br>All Connected in Hana Finance</b></p>
 
-                            
-                            <p>하나만의 혁신적인 플랫폼을 통해 모든 사람이 마음껏 금융을 즐기고 신뢰를 바탕으로 금융의 새로운 가치를 창출하자는 의미를<br>
-                            담고 있습니다.</p>
-                            
-                            <p>'하나'만의 방식으로 '연결'하여 '모두'가 함께 누리게 될 금융 그 이상의 '금융'</p>
-                            
-                            <p>새로운 서비스와 인재들을 연결해 진화된 금융 세상을 실현시키는 하나의 노력이 시작됩니다.</p>
-                        </div>
-
-                        <!--2.하나로 키워드 그룹-->
-                        <div>
-                            <!--핵심 키워드를 담고 있는 문단-->
-                            <p><strong>하나로</strong></p>
-
-                            <p>빠르고 과감한 도전정신을 기반으로 변화를 주도하며 디지털 시대에 누구에게나 쉽고 편리한 새로운 경험을 제공하고 올바른<br>
-                            금융을 실천하겠다는 신뢰와 혁신의 의지를 나타냅니다.</p>                        
-                            <p>쉽고 편리한 서비스, 새롭고 차별화된 손님 경험, 지속 가능하고 신뢰할 수 있는 가치를 하나만의 방식으로 실현해 나갈 것입니다.</p>
-
-                            <img src="sub_img/vision-vision-01.png" alt="누구나 편하고 특별하며 믿을 수 있는 도전적인 하나금융">
-                        </div>
-                        
-                        <!--3.연결된 키워드 그룹-->
-                        <div>
-                            <!--핵심 키워드를 담고 있는 문단-->
-                            <p><strong>연결된</strong></p>
-                            <p>언제, 어디서나, 누구에게나 함께 연결되고, 현재와 미래를 이어주는, 금융을 넘어 모두가 필요로 하는 가치를 맺어주는 것을<br>
-                            의미합니다.
-                            </p>
-
-                            <p>디지털 금융 혁신을 통해, 한층 더 진화된 금융 플랫폼을 구현하여 언제/어디서나/누구나 필요로 하는 금융서비스를 제공하여<br>
-                            새로운 세상을 만들어 나간다는 하나금융그룹의 다짐입니다.</p>
-
-                            <img src="sub_img/vision-vision-02.png" alt="언제어디서나 시공,미래,가치를 창출하는 하나금융">
-                        </div>
-
-                        <!--4.모두의 금융 키워드 그룹-->
-                        <div>
-                            <!--핵심 키워드를 담고 있는 문단-->
-                            <p><strong>모두의 금융</strong></p>
-
-                            <p>언제, 어디서나, 누구에게나 함께 연결되고, 현재와 미래를 이어주는, 금융을 넘어 모두가 필요로 하는 가치를<br>
-                            맺어주는 것을 의미합니다.</p>
-
-                            <p>디지털 금융 혁신을 통해, 한층 더 진화된 금융 플랫폼을 구현하여 언제/어디서나/누구나 필요로 하는 금융서비스를 제공하여<br>
-                            새로운 세상을 만들어 나간다는 하나금융그룹의 다짐입니다.</p>
-
-                            <img src="sub_img/vision-vision-03.png" alt="모든 이해관계자와 서비스를 잇는 융합 생태계,금융을 넘어 모두가 필요로하는 세상">
-
-
-                            <p>하나금융그룹은 1971년 창립 이래 변화무쌍한 전략과 적극적인 사업모델 전환으로 시장 변화에 따른 무수한 경영 위기들을<br>
-                            극복하여 국내 선도 금융 그룹으로 자리매김하였으며, 최근 금융 사업을 둘러싼 대내외 환경의 급격한 변화에 적극적이고<br>
-                            효과적으로 대응하기 위해 새로운 비전과 전략목표를 수립하게 되었습니다.</p>
-
-                            <p>하나금융그룹의 비전은 1. 하나만의 방식으로 2. 시공/미래/가치를 연결하여 3. 모두가 함께 누리게 될 금융 그 이상의 금융의<br>
-                            의미를 담았습니다. 이를 통해 혁신적인 플랫폼으로 모든 사람들 이 마음껏 금융을 즐기고, 신뢰를 바탕으로 한 금융의<br>
-                            새로운 가치를 창출해 나아가고자 합니다.</p>
-
-                            <p>손님 중심 미래형 혁신 사업모델을 기반으로 단순 성장 중심이 아닌 가치 중심 도약을 추구하여 손님, 주주, 사회와 함께<br>
-                            대한민국을 넘어 아시아 No.1 금융그룹이 될 수 있도록 노력할 것입니다.</p>
+                            <p>지금껏 그래왔듯이 하나금융그룹은 본연의 역할을 충실히 수행하면서 모든 이해관계자들과는 성장 이익을 함께 나누고 금융을<br> 
+                                통한 공유가치 창출을 통해 사회구성원들의 행복 추구에 적극 동참할 것입니다.</p>                           
                         </div>
                     </div>
-                </div>
 
-                <!--4.목표-->
-                <div>
-                    <!--css h4{ position:sticky; top:80px; }-->
-                    <h4>전략목표</h4>
-
-                    <!--css div{ margin-left:400px; }-->
+                    <!--2.2030비전-->
                     <div>
-                        <!--css  p span{ color:red; }-->
-                        <p><strong><span>O.N.E.</span>value 2030</strong></p>
-                        <img src="sub_img/vision-target-01.png" alt="그룹의 비전 달성을 위한 새로운 전략목표는 외형 확대가 아닌 가치추구 전환을 의미합니다.">
+                        <h4>2030비전</h4>
+                        <div>
+                            <!--1-->
+                            <div>
+                                <p>하나로 연결된 모두의 금융<br>
+                                All Connected in Hana Finance</p>
+                                
+                                <p>하나만의 혁신적인 플랫폼을 통해 모든 사람이 마음껏 금융을 즐기고 신뢰를 바탕으로 금융의 새로운 가치를 창출하자는 의미를<br>
+                                담고 있습니다.</p>
+                                
+                                <p>'하나'만의 방식으로 '연결'하여 '모두'가 함께 누리게 될 금융 그 이상의 '금융'</p>
+                                
+                                <p>새로운 서비스와 인재들을 연결해 진화된 금융 세상을 실현시키는 하나의 노력이 시작됩니다.</p>
+                            </div>
+
+                            <!--2-->
+                            <div>
+                                <p class="visionLine"><b>하나로</b></p>
+
+                                <p>빠르고 과감한 도전정신을 기반으로 변화를 주도하며 디지털 시대에 누구에게나 쉽고 편리한 새로운 경험을 제공하고 올바른<br>
+                                금융을 실천하겠다는 신뢰와 혁신의 의지를 나타냅니다.</p>
+
+                                <p>쉽고 편리한 서비스, 새롭고 차별화된 손님 경험, 지속 가능하고 신뢰할 수 있는 가치를 하나만의 방식으로 실현해 나갈 것입니다.</p>
+
+                                <img src="sub_img/vision-vision-01.png" alt="하나금융그룹 하나만의 방식
+                                편한, 누구나 다가가기 쉽고 편리한
+                                특별한, 가장 손님 중심적이고 새롭고 다양한
+                                믿을 수 있는, 올바르고 믿음직하여 안정적이고 안전한
+                                도전적인, 빠르고 과감하게 변화를 주도하고 실패를 두려워하지 않는">
+                            </div>
+
+                            <!--3-->
+                            <div>
+                                <p><b>연결된</b></p>
+
+                                <p>언제, 어디서나, 누구에게나 함께 연결되고, 현재와 미래를 이어주는, 금융을 넘어 모두가 필요로 하는 가치를 맺어주는 것을<br> 
+                                    의미합니다.</p>
+
+                                <p>디지털 금융 혁신을 통해, 한층 더 진화된 금융 플랫폼을 구현하여 언제/어디서나/누구나 필요로 하는 금융서비스를 제공하여<br>
+                                    새로운 세상을 만들어 나간다는 하나금융그룹의 다짐입니다.</p>
+
+                                <img src="sub_img/vision-vision-02.png" alt="하나금융그룹 시공,미래,가치를 연결">
+                            </div>
+
+                            <!--4-->
+                            <div>
+                                <p><b>모두의 금융</b></p>
+
+                                <p>언제, 어디서나, 누구에게나 함께 연결되고, 현재와 미래를 이어주는, 금융을 넘어 모두가 필요로 하는 가치를<br> 
+                                    맺어주는 것을 의미합니다.</p>
+
+                                <p>디지털 금융 혁신을 통해, 한층 더 진화된 금융 플랫폼을 구현하여 언제/어디서나/누구나 필요로 하는 금융서비스를 제공하여<br>
+                                    새로운 세상을 만들어 나간다는 하나금융그룹의 다짐입니다.</p>
+                                
+                                <img src="sub_img/vision-vision-03.png" alt="하나금융그룹 모두의 금융">
+                            </div>
+
+                            <!--5-->
+                            <div>
+                                <p class="visionLine">하나금융그룹은 1971년 창립 이래 변화무쌍한 전략과 적극적인 사업모델 전환으로 시장 변화에 따른 무수한 경영 위기들을<br> 
+                                    극복하여 국내 선도 금융 그룹으로 자리매김하였으며, 최근 금융 사업을 둘러싼 대내외 환경의 급격한 변화에 적극적이고<br>  
+                                    효과적으로 대응하기 위해 새로운 비전과 전략목표를 수립하게 되었습니다.</p>
+                                <p>하나금융그룹의 비전은 1. 하나만의 방식으로 2. 시공/미래/가치를 연결하여 3. 모두가 함께 누리게 될 금융 그 이상의 금융의<br>  
+                                    의미를 담았습니다. 이를 통해 혁신적인 플랫폼으로 모든 사람들 이 마음껏 금융을 즐기고, 신뢰를 바탕으로 한 금융의<br>  
+                                    새로운 가치를 창출해 나아가고자 합니다.</p>
+                                <p>손님 중심 미래형 혁신 사업모델을 기반으로 단순 성장 중심이 아닌 가치 중심 도약을 추구하여 손님, 주주, 사회와 함께<br>  
+                                    대한민국을 넘어 아시아 No.1 금융그룹이 될 수 있도록 노력할 것입니다.</p>
+                            </div>
+                        </div>
                     </div>
+
+                    <!--3.전략목표-->
+                    <div>
+                        <h4>전략목표</h4>
+                        <div>
+                            <p><b>O.N.E.</b> value 2030</p>
+                            <img src="sub_img/vision-target-01.png" alt="하나금융그룹 비전달성을 위한 전략목표
+                            그룹의 비전 달성을 위한 새로운 전략목표는 외형 확대가 아닌 가치추구로의 전환을 의미합니다.
+                            Our value, 손님을 우선하는 하나만의 가치를 실현
+                            가장 손님중심 그룹
+                            손님 가치를 실현하는 방식의 대전환 금융과 비금융을 아우르는 손님 중심의 솔루션 제공
+                            손님에 대한 총체적 이해를 바탕으로 손님 경험 극대화 추구
+                            New value, 지속가능경영 실현으로 새로운 가치를 제공
+                            가장 인정받는 그룹
+                            소극적인 Fast-follower가 아닌 ESG Frontier로 전환
+                            공유 가치 창출을 통해 손님, 직원, 주주, 사회 등 모든 이의 행복을 추구
+                            Extra value, 변화에 적극적으로 대응하여 더 나은 가치를 창출
+                            가장 혁신적인 그룹
+                            업의 경계를 뛰어넘는 적극적인 투자로 미래 역량 확보
+                            변화에 적극적으로 대응할 수 있는 인력, 기술, 조직, 기업문화 등 핵심 기반 구축">
+                        </div>
+                    </div>
+
 
                 </div>
 
             </div>
 
-        </main>
+        </div>
 
-        <!--3-->
         <footer id="footer">
 
-            <!--3.0 상단 이동 버튼-->
-            <button>▲</button>
+            <p class="topBtn"><button>TOP</button></p>
 
-            <!--3.1 푸터영역 상단 콘텐츠-->
-            <!--css: width:100%; height:50px; border-bottom:1px solid #d9d9d9; -->
-            <div class="footer_top">
+            <div class="footerTop">
+                <div class="footerInner1">
 
-                <!--css: width:1400px; height:50px; margin:0 auto; display:flex; justify-content: space-between;-->
-                <div class="footer_inner">
-                    <!--고객지원 메뉴(리스트,항목,목록,)-->
                     <ul>
                         <li><a href="#">개인정보처리방침</a></li>
                         <li><a href="#">신용정보활용체제</a></li>
@@ -242,42 +279,25 @@
                         <li><a href="#">하나맵</a></li>
                     </ul>
 
-                    <!--SNS 채널 목록(항목,리스트,메뉴)-->
                     <ul>
-                        <li><a href="#"><img src="img/sns-icon1.gif" alt="유투브채널 바로가기"></a></li>
-                        <li><a href="#"><img src="img/sns-icon2.gif" alt="인스타그램 바로가기"></a></li>
-                        <li><a href="#"><img src="img/sns-icon3.gif" alt="틱톡 바로가기"></a></li>
-                        <li><a href="#"><img src="img/sns-icon4.gif" alt="페이스북 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon1.gif" alt="하나금융그룹 유트브 채널 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon2.gif" alt="하나금융그룹 인스타그램 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon3.gif" alt="하나금융그룹 틱톡 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon4.gif" alt="하나금융그룹 페이스북 바로가기"></a></li>
                     </ul>
                 </div>
-
             </div>
 
-            <!--3.2 푸터영역 하단 콘텐츠-->
-            <!--css: width:1400px; height:200px; margin:0 auto; display:flex; justify-content: space-between;-->
-            <div class="footer_bottom">
-
-                <div>
-                    <!--하단 로고-->
-                    <a href="index.html"><img src="img/footer-logo.gif" alt="하나금융그룹"></a>
-
-                    <!--주소(address)--> 
-                    <address>서울특별시 중구 을지로 6</address>
-
-                    <!--전화번호-->
-                    <p>02.20002.11110</p>
-
-                    <!--저작권 표기(문장)-->
+            <div class="footerBottom">
+                <div class="footerInner2">
+                    <p><a href="#"><img src="img/footer-logo.gif" alt="하나금융그룹"></a></p>
+                    <address>서울특별시 중구 을지로 66</address> 
+                    <p>02.2002.1110</p>
                     <p>Copyright ⓒ 2022 HANA FINANCIAL GROUP. All rights Reserved.</p>
                 </div>
 
-                <!--웹접근성 인증 취득마크(이미지)-->
-                <a href="https://www.wa.or.kr/" target="_blank">
-                    <img src="img/wa.GIF" alt="웹접근성 인증 마크취득, 웹접성 인증 평가 센터 바로가기">
-                </a>
-
+                <a href="#"><img src="img/wa.GIF" alt="WA웹접근성 인증마크 취득"></a>
             </div>
-
 
         </footer>
 
