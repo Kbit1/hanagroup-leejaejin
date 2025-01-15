@@ -5,17 +5,24 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
         <title>하나금융그룹</title>
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/sub_style.css">
+        <link rel="stylesheet" href="css/subStyle.css">
+        <script src="http://code.jquery.com/jquery-1.9.0rc1.js"></script>
+        <script src="js/motion.js"></script>
     </head>
     <body>
-        <!--1-->
+
         <header id="header">
-            <!--1.1.사이트 제1제목-->
+
             <h1><a href="index.html"><img src="img/logo.JPG" alt="하나금융그룹"></a></h1>
 
-            <!--1.2.전역메뉴(탐색요소 집합)-->
             <nav>
-                <!--명시도 10-->
+
+                <div class="tmNav">                    
+                    <a href="index.html"><img src="img/logo.JPG" alt="하나금융그룹"></a>
+                    <button>X</button>
+                </div>
+
+
                 <ul class="gnb">
                     <!--대메뉴1-->
                     <li>
@@ -64,120 +71,157 @@
                 </ul>
             </nav>
 
-            <!--1.3.사용자에게 유용한 기능을 제공하는 유틸 메뉴-->
-            <ul class="util_menu">
+
+            <ul class="util">
                 <li><a href="#"><img src="img/util-menu1.gif" alt="주식정보 보러가기"></a></li>
-                <li><a href="#"><img src="img/util-menu2.gif" alt="하나네트워크 보러가기"></a></li>
-                <li><a href="#"><img src="img/util-menu3.gif" alt="언어변경"></a></li>
-                <li><a href="#"><img src="img/util-menu4.gif" alt="사이트맵"></a></li>
+                <li><a href="#"><img src="img/util-menu2.gif" alt="하나네트워크 소식 보러가기"></a></li>
+                <li><a href="#"><img src="img/util-menu3.gif" alt="웹사이트 이용시 언어 변경 보러가기"></a></li>
+                <li><a href="#"><img src="img/util-menu4.gif" alt="사이트맵 보러가기"></a></li>
             </ul>
 
         </header>
 
-        <!--2-->
-        <main id="sub_main">
+        <div id="subContainer">
+            <div class="subTitle sub5Bg">
+                <h2>PR센터</h2>
+                <p>하나금융 PR센터를 소개합니다.</p>
+            </div>
 
-            <!--전체 서브 공통 콘텐츠-->
-            <div class="sub_title">
-                <!--2.1 서브 타이틀(h2)구역 -->
-                <div class="sub_visual sub5_bg">
-                    <h2>PR센터</h2>
-                    <p>하나금융 PR센터를 소개합니다.</p>
-                </div>
-                
-                <!--2.2 서브 LNB(Local Navigation bar)-->
-                <div class="lnb">
+            <div class="subLnb">
+
+                <div>
+                    
                     <a href="index.html">홈</a>
-
+                    <a href="newsList.html">PR센터</a>
+    
                     <ul>
-                        <li>
-                            <a href="newsList.html">PR센터</a>
-                            <ul>
-                                <li><a href="newsList.html">하나뉴스</a></li>
-                                <li><a href="focusVideoList.html">하나영상</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="newsList.html">하나뉴스</a></li>
+                        <li><a href="focusVideoList.html">하나영상</a></li>
                     </ul>
 
                 </div>
+
             </div>
 
-            <!--개별 서브 콘텐츠 구역-->
-            <div class="news_list">
+
+            <div class="subContent focusVideoList">
                 <h3>하나뉴스</h3>
 
-                <!--뉴스 카테고리 별 탭메뉴 -->
-                <ul class="pr_tab">
-                    <li><button>전체</button></li>
-                    <li><button>하나뉴스</button></li>
-                    <li><button>경영활동</button></li>
-                    <li><button>ESG뉴스</button></li>
-                </ul>
+                <div>
 
-                <!--뉴스 목록-->
-                <ol class="pr_list">
-                    <li>
-                        <a herf="#">
-                            <p>4-3 화끈한 승리!! FC서울전</p>
-                            <p>2023.08.17</p>
-                        </a>
-                    </li>
+                    <div class="focusTab">
+                        <ul>
+                            <li><button>전체</button></li>
 
-                    <li>
-                        <a herf="#">
-                            <p>3일간 꿀휴가 후 복귀한 선수들~ [대전일기 2023]</p>
-                            <p>2023.08.17</p>
-                        </a>
-                    </li>
+                            <li><button>하나뉴스</button></li>
 
-                    <li>
-                        <a herf="#">
-                            <p>두 달만의 홈 승리! [OFF THE PITCH 24R]</p>
-                            <p>2023.08.17</p>
-                        </a>
-                    </li>
+                            <li><button>경영활동</button></li>
 
-                    <li>
-                        <a herf="#">
-                            <p>네가 참 궁금해 '대전의 딸' 안유진 시축 VLOG</p>
-                            <p>2023.08.17</p>
-                        </a>
-                    </li>
+                            <li><button>ESG뉴스</button></li>
+                            
+                        </ul>
+                    </div>
 
-                    <li>
-                        <a herf="#">
-                            <p>[하나, 더] 태백 전지훈련 다큐 - "땅 속 씨앗은 보이지 않는다." EP.2</p>
-                            <p>2023.08.17</p>
-                        </a>
-                    </li>
+                    <ul>
+                        <!--1-->
+                        <li class="n">
+                            <a href="#">
+                                <img src="sub_img/news_10.jpg" alt="03_4-3화끈한승리!!FC서울전_이미지2">
+                                <p><strong>4-3 화끈한 승리!! FC서울전</strong></p>
+                                <p>2023.08.17</p>
+                            </a>
+                        </li>
 
-                    <li>
-                        <a herf="#">
-                            <p>[하나, 더] 태백 전지훈련 다큐 - "땅 속 씨앗은 보이지 않는다." EP.1</p>
-                            <p>2023.08.17</p>
-                        </a>
-                    </li>
-                </ol>
+                        <!--2-->
+                        <li class="n">
+                            <a href="#">
+                                <img src="sub_img/news_11.jpg" alt="3일간 꿀휴가 후 복귀한 선수들 이미지">
+                                <p><strong>3일간 꿀휴가 후 복귀한 선수들~ [대전일기 2023]</strong></p>
+                                <p>2023.08.09</p>
+                            </a>
+                        </li>
 
-                <button class="pr_more">더보기</button>
-           
+                        <!--3-->
+                        <li class="n">
+                            <a href="#">
+                                <img src="sub_img/news_12.jpg" alt="두달만의 홈 승리 이미지">
+                                <p><strong>두 달만의 홈 승리! [OFF THE PITCH 24R]</strong></p>
+                                <p>2023.07.24</p>
+                            </a>
+                        </li>
+
+                        <!--4-->
+                        <li class="c">
+                            <a href="#">
+                                <img src="sub_img/news_13.jpg" alt="네가 참 궁금해 '대전의 딸' 안유진 시축 VLOG 이미지">
+                                <p><strong>네가 참 궁금해 '대전의 딸' 안유진 시축 VLOG</strong></p>
+                                <p>2023.07.24</p>
+                            </a>
+                        </li>
+
+                        <!--5-->
+                        <li class="c">
+                            <a href="#">
+                                <img src="sub_img/news_14.jpg" alt="태백 전지훈련 다큐 '땅 속 씨앗은 보이지 않는다' 홍보 이미지">
+                                <p><strong>[하나, 더] 태백 전지훈련 다큐 - "땅 속 씨앗은 보이지 않는다." EP.2</strong></p>
+                                <p>2023.07.24</p>
+                            </a>
+                        </li>
+
+                        <!--6-->
+                        <li class="c">
+                            <a href="#">
+                                <img src="sub_img/news_15.jpg" alt="태백 전지훈련 다큐 '땅 속 씨앗은 보이지 않는다' 홍보 이미지">
+                                <p><strong>[하나, 더] 태백 전지훈련 다큐 - "땅 속 씨앗은 보이지 않는다." EP.1</strong></p>
+                                <p>2023.07.24</p>
+                            </a>
+                        </li>
+
+                        <!--7-->
+                        <li class="e">
+                            <a href="#">
+                                <img src="sub_img/news_16.jpg" alt="2023 하나은행 인비테이셔널, 그 뜨거웠던 현장 속으로! 이미지">
+                                <p><strong>2023 하나은행 인비테이셔널, 그 뜨거웠던 현장 속으로!</strong></p>
+                                <p>2023.06.30</p>
+                            </a>
+                        </li>
+
+                        <!--8-->
+                        <li class="e">
+                            <a href="#">
+                                <img src="sub_img/news_17.jpg" alt="홈경기장인 대전월드컵경기장을 찾은 신입 선수. 이도현 이미지">
+                                <p><strong>[#VLOG] 대전하나시티즌의 새로운 선수(?)를 소개합니다</strong></p>
+                                <p>2023.06.30</p>
+                            </a>
+                        </li>
+
+                        <!--9-->
+                        <li  class="e">
+                            <a href="#">
+                                <img src="sub_img/news_18.jpg" alt="최강 직장인 농구 동호회 VS 프로의 대결! 커리 챌린지 우리는 60초로 간다! 홍보이미지">
+                                <p><strong>최강 직장인 농구 동호회 VS 프로의 대결! 커리 챌린지 우리는 60초로 간다!</strong></p>
+                                <p>2023.06.23</p>
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+                    <button>더보기</button>
+
+                </div>
+
             </div>
 
-        </main>
+        </div>
 
-        <!--3-->
         <footer id="footer">
 
-            <!--3.0 상단 이동 버튼-->
-            <button>▲</button>
+            <p class="topBtn"><button>TOP</button></p>
 
-            <!--3.1 푸터영역 상단 콘텐츠-->
-            <!--css: width:100%; height:50px; border-bottom:1px solid #d9d9d9; -->
-            <div class="footer_top">
+            <div class="footerTop">
+                <div class="footerInner1">
 
-                <!--css: width:1400px; height:50px; margin:0 auto; display:flex; justify-content: space-between;-->
-                <div class="footer_inner">
-                    <!--고객지원 메뉴(리스트,항목,목록,)-->
                     <ul>
                         <li><a href="#">개인정보처리방침</a></li>
                         <li><a href="#">신용정보활용체제</a></li>
@@ -185,42 +229,25 @@
                         <li><a href="#">하나맵</a></li>
                     </ul>
 
-                    <!--SNS 채널 목록(항목,리스트,메뉴)-->
                     <ul>
-                        <li><a href="#"><img src="img/sns-icon1.gif" alt="유투브채널 바로가기"></a></li>
-                        <li><a href="#"><img src="img/sns-icon2.gif" alt="인스타그램 바로가기"></a></li>
-                        <li><a href="#"><img src="img/sns-icon3.gif" alt="틱톡 바로가기"></a></li>
-                        <li><a href="#"><img src="img/sns-icon4.gif" alt="페이스북 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon1.gif" alt="하나금융그룹 유트브 채널 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon2.gif" alt="하나금융그룹 인스타그램 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon3.gif" alt="하나금융그룹 틱톡 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon4.gif" alt="하나금융그룹 페이스북 바로가기"></a></li>
                     </ul>
                 </div>
-
             </div>
 
-            <!--3.2 푸터영역 하단 콘텐츠-->
-            <!--css: width:1400px; height:200px; margin:0 auto; display:flex; justify-content: space-between;-->
-            <div class="footer_bottom">
-
-                <div>
-                    <!--하단 로고-->
-                    <a href="index.html"><img src="img/footer-logo.gif" alt="하나금융그룹"></a>
-
-                    <!--주소(address)--> 
-                    <address>서울특별시 중구 을지로 6</address>
-
-                    <!--전화번호-->
-                    <p>02.20002.11110</p>
-
-                    <!--저작권 표기(문장)-->
+            <div class="footerBottom">
+                <div class="footerInner2">
+                    <p><a href="#"><img src="img/footer-logo.gif" alt="하나금융그룹"></a></p>
+                    <address>서울특별시 중구 을지로 66</address> 
+                    <p>02.2002.1110</p>
                     <p>Copyright ⓒ 2022 HANA FINANCIAL GROUP. All rights Reserved.</p>
                 </div>
 
-                <!--웹접근성 인증 취득마크(이미지)-->
-                <a href="https://www.wa.or.kr/" target="_blank">
-                    <img src="img/wa.GIF" alt="웹접근성 인증 마크취득, 웹접성 인증 평가 센터 바로가기">
-                </a>
-
+                <a href="#"><img src="img/wa.GIF" alt="WA웹접근성 인증마크 취득"></a>
             </div>
-
 
         </footer>
 
