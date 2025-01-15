@@ -5,16 +5,22 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
         <title>하나금융그룹</title>
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/sub_style.css">
+        <link rel="stylesheet" href="css/subStyle.css">
+        <script src="http://code.jquery.com/jquery-1.9.0rc1.js"></script>
+        <script src="js/motion.js"></script>
     </head>
     <body>
-        <!--1-->
+
         <header id="header">
-            <!--1.1.사이트 제1제목-->
+
             <h1><a href="index.html"><img src="img/logo.JPG" alt="하나금융그룹"></a></h1>
-            <!--1.2.전역메뉴(탐색요소 집합)-->
+
             <nav>
-                <!--명시도 10-->
+                <div class="tmNav">                    
+                    <a href="index.html"><img src="img/logo.JPG" alt="하나금융그룹"></a>
+                    <button>X</button>
+                </div>
+                
                 <ul class="gnb">
                     <!--대메뉴1-->
                     <li>
@@ -63,83 +69,58 @@
                 </ul>
             </nav>
 
-            <!--1.3.사용자에게 유용한 기능을 제공하는 유틸 메뉴-->
-            <ul class="util_menu">
+            <ul class="util">
                 <li><a href="#"><img src="img/util-menu1.gif" alt="주식정보 보러가기"></a></li>
-                <li><a href="#"><img src="img/util-menu2.gif" alt="하나네트워크 보러가기"></a></li>
-                <li><a href="#"><img src="img/util-menu3.gif" alt="언어변경"></a></li>
-                <li><a href="#"><img src="img/util-menu4.gif" alt="사이트맵"></a></li>
+                <li><a href="#"><img src="img/util-menu2.gif" alt="하나네트워크 소식 보러가기"></a></li>
+                <li><a href="#"><img src="img/util-menu3.gif" alt="웹사이트 이용시 언어 변경 보러가기"></a></li>
+                <li><a href="#"><img src="img/util-menu4.gif" alt="사이트맵 보러가기"></a></li>
             </ul>
 
         </header>
 
-        <!--2-->
-        <main id="sub_main">
+        <div id="subContainer">
 
-            <!--전체 서브 공통 콘텐츠-->
-            <div class="sub_title">
-                <!--2.1 서브 타이틀(h2)구역 -->
-                <div class="sub_visual sub1_bg">
-                    <h2>그룹소개</h2>
-                    <p>하나금융 그룹을 소개합니다.</p>
-                </div>
-                
-                <!--2.2 서브 LNB(Local Navigation bar)-->
-                <div class="lnb">
+            <div class="subTitle sub1Bg">
+                <h2>그룹소개</h2>
+                <p>하나금융 그룹을 소개합니다. </p>
+            </div>
 
+            <div class="subLnb">
+
+                <div>
                     <a href="index.html">홈</a>
-
+                    <a href="hanaValueList.html">그룹소개</a>
                     <ul>
-                        <li>
-                            <a href="hanaValueList.html">그룹소개</a>
-                            <ul>
-                                <li><a href="hanaValueList.html">핵심가치</a></li>
-                                <li><a href="vision.html">그룹비전</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="hanaValueList.html">핵심가치</a></li>
+                        <li><a href="vision.html">그룹비전</a></li>
                     </ul>
 
                 </div>
+
             </div>
 
-            <!--개별 서브 콘텐츠 구역-->
-            <div class="hanaValueList hana">
+            <div class="subContent value">
                 <h3>핵심가치</h3>
 
-                <p><strong>POWER on Integrity</strong></p>
-
-                <p>
-                    하나금융그룹은 하나인만의 생각하는 방식, 창조적이고 강력한 기업문화를 가지고 있습니다. 하나인들이 공유하고 실천하는 핵심 
+                <div>
+                    <p><strong>POWER on Integrity</strong></p>
+                    <p><b>하나금융그룹은</b> 하나인만의 생각하는 방식, 창조적이고 강력한 기업문화를 가지고 있습니다. 하나인들이 공유하고 실천하는 핵심<br>
                     가치는 기업 활동에 있어서 가치판단과 행동의 기준이 되는 가장 소중한 무형자산입니다.
-                </p>
-
-                <img src="sub_img/hanaValue.png" alt="Passion 열정 태양같은 열정 책임감 있게 최선을 다하고 변화와 혁신으로 더 나은 가치를 추구하는 것
-                Openness 열린마음 하늘같은 열린 마음 유연하고 편견없이 사람이나 상황을 이해하고 공감하는 것
-                With Customer 손님우선 왕처럼 모시는 손님 손님을 최우선으로 삼는 마음으로 그들의 필요를 탐구하고 채워주는 것
-                Excllence 전문성 별처럼 빛나는 전문성 최고의 신뢰를 얻기 위해 각자의 분야에서 차별화된 역량을 계발하는 것
-                Rwespect 존중과 배려 마음에서 우러나는 존중과 배려 개인 역략 발휘와 상호협력을 위한 기본 자세로 상대방 입장에서 생각하고 대하는 것
-                Integrity 정직 성실 투명 산처럼 변하지 않는 INTEGRITY 금융인의 기본적인 윤리로 항상 맡은 바를 정직하고 성실하게 이행하는 것
-                
-                하나금융그룹 핵삼가치는 손님을 우선으로 하는 기업과 개인의 가치판단 및 행동의 기준입니다.">
-
-                <a href="vision.html"><span>비전과 미션</span> <img src="sub_img/more-btn1.GIF" alt="바로가기"></a>
+                    </p>
+                    <img src="sub_img/hanaValue.png" alt="열정,열린마음,손님우선,전문성,존중과 배려,정직,성실,투명">
+                    <a href="vision.html"> 비전과 미션</a>
+                </div>
             </div>
 
-        </main>
+        </div>
 
-        <!--3-->
         <footer id="footer">
 
-            <!--3.0 상단 이동 버튼-->
-            <button>▲</button>
+            <p class="topBtn"><button>TOP</button></p>
 
-            <!--3.1 푸터영역 상단 콘텐츠-->
-            <!--css: width:100%; height:50px; border-bottom:1px solid #d9d9d9; -->
-            <div class="footer_top">
+            <div class="footerTop">
+                <div class="footerInner1">
 
-                <!--css: width:1400px; height:50px; margin:0 auto; display:flex; justify-content: space-between;-->
-                <div class="footer_inner">
-                    <!--고객지원 메뉴(리스트,항목,목록,)-->
                     <ul>
                         <li><a href="#">개인정보처리방침</a></li>
                         <li><a href="#">신용정보활용체제</a></li>
@@ -147,40 +128,25 @@
                         <li><a href="#">하나맵</a></li>
                     </ul>
 
-                    <!--SNS 채널 목록(항목,리스트,메뉴)-->
+
                     <ul>
-                        <li><a href="#"><img src="img/sns-icon1.gif" alt="유투브채널 바로가기"></a></li>
-                        <li><a href="#"><img src="img/sns-icon2.gif" alt="인스타그램 바로가기"></a></li>
-                        <li><a href="#"><img src="img/sns-icon3.gif" alt="틱톡 바로가기"></a></li>
-                        <li><a href="#"><img src="img/sns-icon4.gif" alt="페이스북 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon1.gif" alt="하나금융그룹 유트브 채널 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon2.gif" alt="하나금융그룹 인스타그램 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon3.gif" alt="하나금융그룹 틱톡 바로가기"></a></li>
+                        <li><a href="#"><img src="img/sns-icon4.gif" alt="하나금융그룹 페이스북 바로가기"></a></li>
                     </ul>
                 </div>
-
             </div>
 
-            <!--3.2 푸터영역 하단 콘텐츠-->
-            <!--css: width:1400px; height:200px; margin:0 auto; display:flex; justify-content: space-between;-->
-            <div class="footer_bottom">
-
-                <div>
-                    <!--하단 로고-->
-                    <a href="index.html"><img src="img/footer-logo.gif" alt="하나금융그룹"></a>
-
-                    <!--주소(address)--> 
-                    <address>서울특별시 중구 을지로 6</address>
-
-                    <!--전화번호-->
-                    <p>02.20002.11110</p>
-
-                    <!--저작권 표기(문장)-->
+            <div class="footerBottom">
+                <div class="footerInner2">
+                    <p><a href="#"><img src="img/footer-logo.gif" alt="하나금융그룹"></a></p>
+                    <address>서울특별시 중구 을지로 66</address> 
+                    <p>02.2002.1110</p>
                     <p>Copyright ⓒ 2022 HANA FINANCIAL GROUP. All rights Reserved.</p>
                 </div>
 
-                <!--웹접근성 인증 취득마크(이미지)-->
-                <a href="https://www.wa.or.kr/" target="_blank">
-                    <img src="img/wa.GIF" alt="웹접근성 인증 마크취득, 웹접성 인증 평가 센터 바로가기">
-                </a>
-
+                <a href="#"><img src="img/wa.GIF" alt="WA웹접근성 인증마크 취득"></a>
             </div>
 
         </footer>
