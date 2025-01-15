@@ -1,6 +1,8 @@
 let count = 1; 
 let ag = setInterval("autoSlide()",3000); //셋인터벌 3초//
 
+$(function(){
+
 function autoSlide(){
 
     $(".slide").stop().animate({ marginLeft:"-100%" },function(){
@@ -212,4 +214,7 @@ $(function(){
             $(this).hide();
         });
 
+});
+
+      
 });
